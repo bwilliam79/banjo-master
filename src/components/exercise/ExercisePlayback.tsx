@@ -94,19 +94,19 @@ export default function ExercisePlayback({
       )}
 
       {/* Chord display */}
-      {exercise.type === 'play-chord' && exercise.data?.chords && (
-        <div className="bg-surface-hover rounded-lg p-4 text-center">
-          <span className="text-xs text-muted">Current Chord</span>
-          <div className="text-3xl font-bold text-primary mt-1">
-            {(exercise.data.chords as string[])[
-              Math.min(
-                Math.floor(noteEvents.length / 8),
-                (exercise.data.chords as string[]).length - 1,
-              )
-            ] || (exercise.data.chords as string[])[0]}
-          </div>
+      {exercise.type === 'play-chord' && exercise.data?.chords && (() => {
+        const chordList = exercise.data.chords as string[];
+        const idx = Math.min(Math.floor(noteEvents.length / 8), chordList.length - 1);
+        const currentChord = chordList[idx] || chordList[0];
+        return (
+          <div className="bg-surface-hover rounded-lg p-4 text-center">
+            <span className="text-xs text-muted">Current Chord</span>
+            <div className="text-3xl font-bold text-primary mt-1">
+              {currentChord}
+            </div>
         </div>
-      )}
+        );
+      })()}
 
       {/* BPM indicator */}
       <div className="flex items-center justify-center gap-2 text-xs text-muted">
