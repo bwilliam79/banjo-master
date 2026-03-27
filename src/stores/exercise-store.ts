@@ -6,6 +6,7 @@ import type { TimingResult } from '@/lib/audio/rhythm-analyzer';
 export type ExercisePhase =
   | 'idle'
   | 'setup'
+  | 'preflight'
   | 'countdown'
   | 'playing'
   | 'reviewing'
