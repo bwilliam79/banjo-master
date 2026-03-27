@@ -38,6 +38,25 @@ export default function SettingsPage() {
           </button>
         </div>
       </section>
+
+      <section className="bg-surface rounded-xl border border-border p-6 space-y-2">
+        <h2 className="text-lg font-semibold text-foreground">About</h2>
+        <div className="text-sm text-muted space-y-1">
+          <p>
+            Version{" "}
+            <span className="font-mono text-foreground">
+              {process.env.NEXT_PUBLIC_APP_VERSION}
+            </span>
+          </p>
+          <p>
+            Build{" "}
+            <span className="font-mono text-foreground">
+              {process.env.NEXT_PUBLIC_GIT_SHA}
+            </span>
+            {" "}({process.env.NEXT_PUBLIC_BUILD_DATE})
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
