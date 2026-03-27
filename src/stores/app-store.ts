@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 interface AppState {
   activeTab: string;
@@ -9,11 +10,31 @@ interface AppState {
   setSidebarOpen: (open: boolean) => void;
 }
 
-export const useAppStore = create<AppState>((set) => ({
-  activeTab: 'home',
-  setActiveTab: (tab) => set({ activeTab: tab }),
-  darkMode: false,
-  toggleDarkMode: () => set((s) => ({ darkMode: !s.darkMode })),
-  sidebarOpen: false,
-  setSidebarOpen: (open) => set({ sidebarOpen: open }),
-}));
+export const useAppStore = create<AppState>()(
+  persist(
+    (set) => ({
+      activeTab: 'home',
+      setActiveTab: (tab) => set({ activeTab: tab }),
+      darkMode: false,
+      toggleDarkMode: () =>
+        set((s) => {
+          const next = !s.darkMode;
+          if (typeof document !== 'undefined') {
+            document.documentElement.classList.toggle('dark', next);
+          }
+          return { darkMode: next };
+        }),
+      sidebarOpen: false,
+      setSidebarOpen: (open) => set({ sidebarOpen: open }),
+    }),
+    {
+      name: 'banjo-app-settings',
+      partialize: (state) => ({ darkMode: state.darkMode }),
+      onRehydrateStorage: () => (state) => {
+        if (state?.darkMode && typeof document !== 'undefined') {
+          document.documentElement.classList.add('dark');
+        }
+      },
+    }
+  )
+);
