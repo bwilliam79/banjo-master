@@ -1,9 +1,5 @@
-:443 {
+https:// {
 	tls internal
 
 	reverse_proxy banjo-master:3000
-}
-
-:80 {
-	redir https://{host}{uri} permanent
 }
