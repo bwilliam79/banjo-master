@@ -33,6 +33,9 @@ import ExerciseCountdown from './ExerciseCountdown';
 import ExercisePlayback from './ExercisePlayback';
 import ExerciseReview from './ExerciseReview';
 
+// Direct access to store state outside React render cycle.
+const getState = () => useExerciseStore.getState();
+
 interface ExerciseRunnerProps {
   exercise: Exercise;
   lessonId: string;
@@ -56,6 +59,7 @@ export default function ExerciseRunner({
   const handIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const handScoresRef = useRef<number[]>([]);
   const noteEvalsRef = useRef<NoteEvaluation[]>([]);
+  const stoppedRef = useRef(false);
   const [useCamera, setUseCamera] = useState(false);
 
   // Parse exercise data.
@@ -77,6 +81,7 @@ export default function ExerciseRunner({
   }, [exercise.id]);
 
   const cleanup = useCallback(() => {
+    stoppedRef.current = true;
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
@@ -95,168 +100,19 @@ export default function ExerciseRunner({
     getAudioContext();
     const analyser = await createAnalyser();
     analyserRef.current = analyser;
-    store.setListening(true);
-  }, [store]);
+    getState().setListening(true);
+  }, []);
 
   // Begin the countdown phase.
   const startCountdown = useCallback(async () => {
     await startListening();
-    store.setPhase('countdown');
-  }, [startListening, store]);
-
-  // Called when countdown finishes — start the playing phase.
-  const startPlaying = useCallback(() => {
-    startTimeRef.current = performance.now();
-    onsetDetectorRef.current = createOnsetDetector();
-    noteEvalsRef.current = [];
-    handScoresRef.current = [];
-
-    // Build beat grid.
-    const totalNotes =
-      tabSequence.length > 0
-        ? tabSequence.length
-        : Math.ceil((duration * bpm) / 60);
-    const subdivisions = exercise.type === 'rhythm' ? 1 : 1;
-    beatGridRef.current = createBeatGrid(
-      bpm,
-      subdivisions,
-      startTimeRef.current,
-      totalNotes,
-    );
-
-    store.setPhase('playing');
-
-    // Start hand detection if camera is active.
-    if (useCamera && videoRef.current) {
-      handIntervalRef.current = setInterval(async () => {
-        if (!videoRef.current) return;
-        const result = await detectHands(videoRef.current);
-        if (result) {
-          const feedback = analyzeHandPosition(result);
-          handScoresRef.current.push(feedback.overallScore);
-          store.setFeedbackMessage(feedback.message);
-        }
-      }, 500);
-    }
-
-    // Start the main analysis loop.
-    const tick = () => {
-      if (!analyserRef.current || store.phase !== 'playing') return;
-
-      const elapsed = performance.now() - startTimeRef.current;
-      store.setElapsedMs(elapsed);
-
-      // Check if exercise duration is exceeded.
-      if (elapsed > duration * 1000 + 2000) {
-        finishExercise();
-        return;
-      }
-
-      // Detect onset.
-      const onset = onsetDetectorRef.current?.(analyserRef.current);
-      if (onset && beatGridRef.current) {
-        const timingResult = classifyOnset(onset.timestamp, beatGridRef.current);
-
-        // Detect pitch at this moment.
-        const pitchResult = detectPitch(analyserRef.current);
-
-        let noteEval: NoteEvaluation | null = null;
-
-        if (exercise.type === 'play-tab' && tabSequence.length > 0) {
-          const cursor = store.tabCursor;
-          if (cursor < tabSequence.length) {
-            noteEval = evaluateNote(pitchResult, tabSequence[cursor]);
-            noteEvalsRef.current.push(noteEval);
-            store.advanceTabCursor();
-          }
-        } else if (exercise.type === 'play-chord' && chords.length > 0) {
-          // For chord exercises, check if played note is in chord.
-          const chordIdx = Math.min(
-            Math.floor(timingResult.nearestBeatIndex / 8),
-            chords.length - 1,
-          );
-          const result = evaluateChordTone(pitchResult, chords[chordIdx]);
-          noteEval = {
-            expected: {
-              string: 0,
-              note: chords[chordIdx],
-              octave: 0,
-              frequency: 0,
-            },
-            detected: pitchResult,
-            correctNote: result.inChord,
-            centsOff: 0,
-            score: result.score,
-          };
-          noteEvalsRef.current.push(noteEval);
-        } else if (exercise.type === 'rhythm') {
-          // Rhythm — only timing matters, any note is fine.
-          if (pitchResult) {
-            noteEval = {
-              expected: {
-                string: 0,
-                note: pitchResult.note,
-                octave: pitchResult.octave,
-                frequency: pitchResult.frequency,
-              },
-              detected: pitchResult,
-              correctNote: true,
-              centsOff: 0,
-              score: 100,
-            };
-            noteEvalsRef.current.push(noteEval);
-          }
-        } else {
-          // Ear training or generic — just track what we hear.
-          if (pitchResult) {
-            noteEval = {
-              expected: {
-                string: 0,
-                note: pitchResult.note,
-                octave: pitchResult.octave,
-                frequency: pitchResult.frequency,
-              },
-              detected: pitchResult,
-              correctNote: true,
-              centsOff: 0,
-              score: 80,
-            };
-            noteEvalsRef.current.push(noteEval);
-          }
-        }
-
-        store.recordNoteEvent({
-          timestamp: onset.timestamp,
-          noteEval,
-          timingResult,
-        });
-
-        // Update real-time feedback.
-        const rating = timingResult.rating;
-        const noteInfo = noteEval?.correctNote ? 'correct' : 'wrong note';
-        store.setFeedbackMessage(
-          `${rating.toUpperCase()} — ${noteInfo}`,
-        );
-      }
-
-      // Check if tab exercise is complete (all notes played).
-      if (
-        exercise.type === 'play-tab' &&
-        tabSequence.length > 0 &&
-        store.tabCursor >= tabSequence.length
-      ) {
-        finishExercise();
-        return;
-      }
-
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bpm, duration, exercise, store, tabSequence, chords, useCamera]);
+    getState().setPhase('countdown');
+  }, [startListening]);
 
   const finishExercise = useCallback(() => {
+    if (stoppedRef.current) return;
+    stoppedRef.current = true;
+
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
@@ -267,7 +123,8 @@ export default function ExerciseRunner({
     }
 
     // Compute final scores.
-    const timingResults = store.noteEvents
+    const state = getState();
+    const timingResults = state.noteEvents
       .map((e) => e.timingResult)
       .filter((r): r is NonNullable<typeof r> => r !== null);
 
@@ -282,7 +139,7 @@ export default function ExerciseRunner({
         : -1;
 
     const scores = { accuracy, timing, handPlacement };
-    store.updateScores(scores);
+    state.updateScores(scores);
 
     const overall = compositeScore(scores);
     const passed = overall >= exercise.passingScore;
@@ -299,21 +156,144 @@ export default function ExerciseRunner({
       passingScore: exercise.passingScore,
     });
 
-    store.setPhase('reviewing');
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [exercise, lessonId, store]);
+    state.setPhase('reviewing');
+  }, [exercise, lessonId]);
+
+  // Called when countdown finishes — start the playing phase.
+  const startPlaying = useCallback(() => {
+    stoppedRef.current = false;
+    startTimeRef.current = performance.now();
+    onsetDetectorRef.current = createOnsetDetector();
+    noteEvalsRef.current = [];
+    handScoresRef.current = [];
+
+    // Build beat grid.
+    const totalNotes =
+      tabSequence.length > 0
+        ? tabSequence.length
+        : Math.ceil((duration * bpm) / 60);
+    beatGridRef.current = createBeatGrid(bpm, 1, startTimeRef.current, totalNotes);
+
+    getState().setPhase('playing');
+
+    // Start hand detection if camera is active.
+    if (useCamera && videoRef.current) {
+      handIntervalRef.current = setInterval(async () => {
+        if (!videoRef.current) return;
+        const result = await detectHands(videoRef.current);
+        if (result) {
+          const feedback = analyzeHandPosition(result);
+          handScoresRef.current.push(feedback.overallScore);
+          getState().setFeedbackMessage(feedback.message);
+        }
+      }, 500);
+    }
+
+    // Start the main analysis loop.
+    const tick = () => {
+      if (!analyserRef.current || stoppedRef.current) return;
+
+      const elapsed = performance.now() - startTimeRef.current;
+      getState().setElapsedMs(elapsed);
+
+      // Check if exercise duration is exceeded.
+      if (elapsed > duration * 1000 + 2000) {
+        finishExercise();
+        return;
+      }
+
+      // Detect onset.
+      const onset = onsetDetectorRef.current?.(analyserRef.current);
+      if (onset && beatGridRef.current) {
+        const timingResult = classifyOnset(onset.timestamp, beatGridRef.current);
+
+        // Detect pitch at this moment.
+        const pitchResult = detectPitch(analyserRef.current);
+
+        let noteEval: NoteEvaluation | null = null;
+        const state = getState();
+
+        if (exercise.type === 'play-tab' && tabSequence.length > 0) {
+          const cursor = state.tabCursor;
+          if (cursor < tabSequence.length) {
+            noteEval = evaluateNote(pitchResult, tabSequence[cursor]);
+            noteEvalsRef.current.push(noteEval);
+            state.advanceTabCursor();
+          }
+        } else if (exercise.type === 'play-chord' && chords.length > 0) {
+          const chordIdx = Math.min(
+            Math.floor(timingResult.nearestBeatIndex / 8),
+            chords.length - 1,
+          );
+          const result = evaluateChordTone(pitchResult, chords[chordIdx]);
+          noteEval = {
+            expected: { string: 0, note: chords[chordIdx], octave: 0, frequency: 0 },
+            detected: pitchResult,
+            correctNote: result.inChord,
+            centsOff: 0,
+            score: result.score,
+          };
+          noteEvalsRef.current.push(noteEval);
+        } else if (exercise.type === 'rhythm') {
+          if (pitchResult) {
+            noteEval = {
+              expected: { string: 0, note: pitchResult.note, octave: pitchResult.octave, frequency: pitchResult.frequency },
+              detected: pitchResult,
+              correctNote: true,
+              centsOff: 0,
+              score: 100,
+            };
+            noteEvalsRef.current.push(noteEval);
+          }
+        } else {
+          if (pitchResult) {
+            noteEval = {
+              expected: { string: 0, note: pitchResult.note, octave: pitchResult.octave, frequency: pitchResult.frequency },
+              detected: pitchResult,
+              correctNote: true,
+              centsOff: 0,
+              score: 80,
+            };
+            noteEvalsRef.current.push(noteEval);
+          }
+        }
+
+        state.recordNoteEvent({ timestamp: onset.timestamp, noteEval, timingResult });
+
+        // Update real-time feedback.
+        const rating = timingResult.rating;
+        const noteInfo = noteEval?.correctNote ? 'correct' : 'wrong note';
+        state.setFeedbackMessage(`${rating.toUpperCase()} — ${noteInfo}`);
+      }
+
+      // Check if tab exercise is complete.
+      if (
+        exercise.type === 'play-tab' &&
+        tabSequence.length > 0 &&
+        getState().tabCursor >= tabSequence.length
+      ) {
+        finishExercise();
+        return;
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+  }, [bpm, duration, exercise, tabSequence, chords, useCamera, finishExercise]);
 
   const handleRetry = useCallback(() => {
     cleanup();
-    store.startExercise(exercise);
-  }, [cleanup, exercise, store]);
+    stoppedRef.current = false;
+    getState().startExercise(exercise);
+  }, [cleanup, exercise]);
 
   const handleComplete = useCallback(() => {
-    const { scores } = store;
+    const { scores } = getState();
     const overall = compositeScore(scores);
     const passed = overall >= exercise.passingScore;
     onComplete(scores, passed);
-  }, [exercise.passingScore, onComplete, store]);
+  }, [exercise.passingScore, onComplete]);
 
   // Render based on phase.
   switch (store.phase) {
