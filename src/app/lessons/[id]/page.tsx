@@ -92,6 +92,21 @@ export default function LessonDetailPage() {
     }
   }, [lessonId]);
 
+  const handleExerciseComplete = useCallback(
+    (exerciseId: string) =>
+      (_scores: { accuracy: number; timing: number; handPlacement: number }, passed: boolean) => {
+        if (passed) {
+          setPassedExerciseIds((prev) => new Set(prev).add(exerciseId));
+        }
+        setActiveExerciseId(null);
+      },
+    [],
+  );
+
+  const handleExerciseSkip = useCallback(() => {
+    setActiveExerciseId(null);
+  }, []);
+
   if (lesson === undefined || progress === undefined) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -117,21 +132,6 @@ export default function LessonDetailPage() {
       </div>
     );
   }
-
-  const handleExerciseComplete = useCallback(
-    (exerciseId: string) =>
-      (_scores: { accuracy: number; timing: number; handPlacement: number }, passed: boolean) => {
-        if (passed) {
-          setPassedExerciseIds((prev) => new Set(prev).add(exerciseId));
-        }
-        setActiveExerciseId(null);
-      },
-    [],
-  );
-
-  const handleExerciseSkip = useCallback(() => {
-    setActiveExerciseId(null);
-  }, []);
 
   const levelColors: Record<string, string> = {
     beginner: 'bg-green-100 text-green-800',
