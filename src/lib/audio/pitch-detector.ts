@@ -153,7 +153,7 @@ export function frequencyToNote(frequency: number): PitchResult {
  * Find the closest banjo string to a given frequency.
  */
 export function closestBanjoString(frequency: number) {
-  let closest = BANJO_STRINGS[0];
+  let closest: (typeof BANJO_STRINGS)[number] = BANJO_STRINGS[0];
   let minDist = Infinity;
   for (const s of BANJO_STRINGS) {
     // Compare in log-frequency space (cents) for perceptual accuracy.
