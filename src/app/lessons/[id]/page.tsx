@@ -6,7 +6,12 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db/schema';
 import { seedDatabase } from '@/lib/db/seed';
 import type { Lesson, LessonContent } from '@/types/lesson';
-import ExerciseRunner from '@/components/exercise/ExerciseRunner';
+import dynamic from 'next/dynamic';
+
+const ExerciseRunner = dynamic(
+  () => import('@/components/exercise/ExerciseRunner'),
+  { ssr: false },
+);
 
 function renderContent(block: LessonContent, index: number) {
   switch (block.type) {
