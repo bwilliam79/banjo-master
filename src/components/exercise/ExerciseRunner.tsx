@@ -82,6 +82,42 @@ export default function ExerciseRunner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [exercise.id]);
 
+  // Start camera when playback phase renders and video element is available.
+  useEffect(() => {
+    if (store.phase !== 'playing' || !useCamera || !videoRef.current) return;
+    if (cameraStreamRef.current) return; // Already started.
+
+    const video = videoRef.current;
+    let cancelled = false;
+
+    startCamera(video).then((stream) => {
+      if (cancelled) {
+        stopCamera(stream);
+        return;
+      }
+      cameraStreamRef.current = stream;
+      getState().setCameraActive(true);
+      handIntervalRef.current = setInterval(async () => {
+        if (!video || video.readyState < 2) return;
+        const result = await detectHands(video);
+        if (result) {
+          const feedback = analyzeHandPosition(result);
+          handScoresRef.current.push(feedback.overallScore);
+          getState().setFeedbackMessage(feedback.message);
+        }
+      }, 500);
+    }).catch(() => {
+      if (!cancelled) {
+        getState().setFeedbackMessage('Camera unavailable — continuing without hand detection.');
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [store.phase, useCamera]);
+
   const cleanup = useCallback(() => {
     stoppedRef.current = true;
     if (rafRef.current) {
@@ -182,26 +218,7 @@ export default function ExerciseRunner({
 
     getState().setPhase('playing');
 
-    // Start camera and hand detection if enabled.
-    if (useCamera && videoRef.current) {
-      const video = videoRef.current;
-      startCamera(video).then((stream) => {
-        cameraStreamRef.current = stream;
-        getState().setCameraActive(true);
-        handIntervalRef.current = setInterval(async () => {
-          if (!video || video.readyState < 2) return;
-          const result = await detectHands(video);
-          if (result) {
-            const feedback = analyzeHandPosition(result);
-            handScoresRef.current.push(feedback.overallScore);
-            getState().setFeedbackMessage(feedback.message);
-          }
-        }, 500);
-      }).catch(() => {
-        // Camera failed — continue without it.
-        getState().setFeedbackMessage('Camera unavailable — continuing without hand detection.');
-      });
-    }
+    // Camera is started via useEffect after the playback component mounts.
 
     // Start the main analysis loop.
     const tick = () => {
