@@ -28,6 +28,7 @@ import {
   analyzeHandPosition,
   cleanupHandDetector,
 } from '@/lib/camera/hand-detector';
+import { startCamera, stopCamera } from '@/lib/camera/camera-manager';
 import ExerciseSetup from './ExerciseSetup';
 import ExerciseCountdown from './ExerciseCountdown';
 import ExercisePlayback from './ExercisePlayback';
@@ -59,6 +60,7 @@ export default function ExerciseRunner({
   const handIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const handScoresRef = useRef<number[]>([]);
   const noteEvalsRef = useRef<NoteEvaluation[]>([]);
+  const cameraStreamRef = useRef<MediaStream | null>(null);
   const stoppedRef = useRef(false);
   const [useCamera, setUseCamera] = useState(false);
 
@@ -89,6 +91,10 @@ export default function ExerciseRunner({
     if (handIntervalRef.current) {
       clearInterval(handIntervalRef.current);
       handIntervalRef.current = null;
+    }
+    if (cameraStreamRef.current) {
+      stopCamera(cameraStreamRef.current);
+      cameraStreamRef.current = null;
     }
     cleanupAudio();
     cleanupHandDetector();
@@ -176,17 +182,25 @@ export default function ExerciseRunner({
 
     getState().setPhase('playing');
 
-    // Start hand detection if camera is active.
+    // Start camera and hand detection if enabled.
     if (useCamera && videoRef.current) {
-      handIntervalRef.current = setInterval(async () => {
-        if (!videoRef.current) return;
-        const result = await detectHands(videoRef.current);
-        if (result) {
-          const feedback = analyzeHandPosition(result);
-          handScoresRef.current.push(feedback.overallScore);
-          getState().setFeedbackMessage(feedback.message);
-        }
-      }, 500);
+      const video = videoRef.current;
+      startCamera(video).then((stream) => {
+        cameraStreamRef.current = stream;
+        getState().setCameraActive(true);
+        handIntervalRef.current = setInterval(async () => {
+          if (!video || video.readyState < 2) return;
+          const result = await detectHands(video);
+          if (result) {
+            const feedback = analyzeHandPosition(result);
+            handScoresRef.current.push(feedback.overallScore);
+            getState().setFeedbackMessage(feedback.message);
+          }
+        }, 500);
+      }).catch(() => {
+        // Camera failed — continue without it.
+        getState().setFeedbackMessage('Camera unavailable — continuing without hand detection.');
+      });
     }
 
     // Start the main analysis loop.

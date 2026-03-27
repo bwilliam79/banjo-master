@@ -28,8 +28,9 @@ export interface PitchResult {
   cents: number;
 }
 
-/** Minimum RMS amplitude to consider the signal audible. */
-const SILENCE_THRESHOLD = 0.01;
+/** Minimum RMS amplitude to consider the signal audible.
+ *  Lowered from 0.01 to work better with mobile device microphones. */
+const SILENCE_THRESHOLD = 0.005;
 
 /** YIN probability threshold — lower is stricter. */
 const YIN_THRESHOLD = 0.15;
