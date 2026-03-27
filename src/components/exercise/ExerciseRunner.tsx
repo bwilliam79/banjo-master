@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { Exercise } from '@/types/lesson';
 import { useExerciseStore } from '@/stores/exercise-store';
-import { createAnalyser, cleanupAudio, getAudioContext } from '@/lib/audio/audio-context';
+import { cleanupAudio } from '@/lib/audio/audio-context';
 import { detectPitch } from '@/lib/audio/pitch-detector';
 import {
   createBeatGrid,
@@ -28,8 +28,9 @@ import {
   analyzeHandPosition,
   cleanupHandDetector,
 } from '@/lib/camera/hand-detector';
-import { startCamera, stopCamera } from '@/lib/camera/camera-manager';
+import { stopCamera } from '@/lib/camera/camera-manager';
 import ExerciseSetup from './ExerciseSetup';
+import ExercisePreflight from './ExercisePreflight';
 import ExerciseCountdown from './ExerciseCountdown';
 import ExercisePlayback from './ExercisePlayback';
 import ExerciseReview from './ExerciseReview';
@@ -82,42 +83,6 @@ export default function ExerciseRunner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [exercise.id]);
 
-  // Start camera when playback phase renders and video element is available.
-  useEffect(() => {
-    if (store.phase !== 'playing' || !useCamera || !videoRef.current) return;
-    if (cameraStreamRef.current) return; // Already started.
-
-    const video = videoRef.current;
-    let cancelled = false;
-
-    startCamera(video).then((stream) => {
-      if (cancelled) {
-        stopCamera(stream);
-        return;
-      }
-      cameraStreamRef.current = stream;
-      getState().setCameraActive(true);
-      handIntervalRef.current = setInterval(async () => {
-        if (!video || video.readyState < 2) return;
-        const result = await detectHands(video);
-        if (result) {
-          const feedback = analyzeHandPosition(result);
-          handScoresRef.current.push(feedback.overallScore);
-          getState().setFeedbackMessage(feedback.message);
-        }
-      }, 500);
-    }).catch(() => {
-      if (!cancelled) {
-        getState().setFeedbackMessage('Camera unavailable — continuing without hand detection.');
-      }
-    });
-
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [store.phase, useCamera]);
-
   const cleanup = useCallback(() => {
     stoppedRef.current = true;
     if (rafRef.current) {
@@ -137,19 +102,27 @@ export default function ExerciseRunner({
     analyserRef.current = null;
   }, []);
 
-  // Start listening to the microphone.
-  const startListening = useCallback(async () => {
-    getAudioContext();
-    const analyser = await createAnalyser();
-    analyserRef.current = analyser;
-    getState().setListening(true);
+  // Setup -> Preflight transition.
+  const startPreflight = useCallback(() => {
+    getState().setPhase('preflight');
   }, []);
 
-  // Begin the countdown phase.
-  const startCountdown = useCallback(async () => {
-    await startListening();
-    getState().setPhase('countdown');
-  }, [startListening]);
+  // Preflight confirms mic/camera are working, passes resources forward.
+  const handlePreflightReady = useCallback(
+    (analyser: AnalyserNode, cameraStream: MediaStream | null, videoElement: HTMLVideoElement | null) => {
+      analyserRef.current = analyser;
+      cameraStreamRef.current = cameraStream;
+      videoRef.current = videoElement;
+      getState().setListening(true);
+      if (cameraStream) getState().setCameraActive(true);
+      getState().setPhase('countdown');
+    },
+    [],
+  );
+
+  const handlePreflightBack = useCallback(() => {
+    getState().setPhase('setup');
+  }, []);
 
   const finishExercise = useCallback(() => {
     if (stoppedRef.current) return;
@@ -164,7 +137,6 @@ export default function ExerciseRunner({
       handIntervalRef.current = null;
     }
 
-    // Compute final scores.
     const state = getState();
     const timingResults = state.noteEvents
       .map((e) => e.timingResult)
@@ -186,7 +158,6 @@ export default function ExerciseRunner({
     const overall = compositeScore(scores);
     const passed = overall >= exercise.passingScore;
 
-    // Save to DB.
     const elapsed = performance.now() - startTimeRef.current;
     saveExerciseResult({
       exerciseId: exercise.id,
@@ -209,7 +180,6 @@ export default function ExerciseRunner({
     noteEvalsRef.current = [];
     handScoresRef.current = [];
 
-    // Build beat grid.
     const totalNotes =
       tabSequence.length > 0
         ? tabSequence.length
@@ -218,7 +188,19 @@ export default function ExerciseRunner({
 
     getState().setPhase('playing');
 
-    // Camera is started via useEffect after the playback component mounts.
+    // Start hand detection if camera stream is already running from preflight.
+    if (cameraStreamRef.current && videoRef.current) {
+      const video = videoRef.current;
+      handIntervalRef.current = setInterval(async () => {
+        if (!video || video.readyState < 2) return;
+        const result = await detectHands(video);
+        if (result) {
+          const feedback = analyzeHandPosition(result);
+          handScoresRef.current.push(feedback.overallScore);
+          getState().setFeedbackMessage(feedback.message);
+        }
+      }, 500);
+    }
 
     // Start the main analysis loop.
     const tick = () => {
@@ -227,18 +209,14 @@ export default function ExerciseRunner({
       const elapsed = performance.now() - startTimeRef.current;
       getState().setElapsedMs(elapsed);
 
-      // Check if exercise duration is exceeded.
       if (elapsed > duration * 1000 + 2000) {
         finishExercise();
         return;
       }
 
-      // Detect onset.
       const onset = onsetDetectorRef.current?.(analyserRef.current);
       if (onset && beatGridRef.current) {
         const timingResult = classifyOnset(onset.timestamp, beatGridRef.current);
-
-        // Detect pitch at this moment.
         const pitchResult = detectPitch(analyserRef.current);
 
         let noteEval: NoteEvaluation | null = null;
@@ -291,13 +269,11 @@ export default function ExerciseRunner({
 
         state.recordNoteEvent({ timestamp: onset.timestamp, noteEval, timingResult });
 
-        // Update real-time feedback.
         const rating = timingResult.rating;
         const noteInfo = noteEval?.correctNote ? 'correct' : 'wrong note';
         state.setFeedbackMessage(`${rating.toUpperCase()} — ${noteInfo}`);
       }
 
-      // Check if tab exercise is complete.
       if (
         exercise.type === 'play-tab' &&
         tabSequence.length > 0 &&
@@ -311,7 +287,7 @@ export default function ExerciseRunner({
     };
 
     rafRef.current = requestAnimationFrame(tick);
-  }, [bpm, duration, exercise, tabSequence, chords, useCamera, finishExercise]);
+  }, [bpm, duration, exercise, tabSequence, chords, finishExercise]);
 
   const handleRetry = useCallback(() => {
     cleanup();
@@ -335,8 +311,17 @@ export default function ExerciseRunner({
           exercise={exercise}
           useCamera={useCamera}
           onToggleCamera={() => setUseCamera((c) => !c)}
-          onStart={startCountdown}
+          onStart={startPreflight}
           onSkip={onSkip}
+        />
+      );
+
+    case 'preflight':
+      return (
+        <ExercisePreflight
+          useCamera={useCamera}
+          onReady={handlePreflightReady}
+          onBack={handlePreflightBack}
         />
       );
 
