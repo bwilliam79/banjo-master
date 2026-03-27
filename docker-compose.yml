@@ -9,16 +9,7 @@ services:
     image: alpine:latest
     volumes:
       - certs:/certs
-    command: >
-      sh -c '
-        if [ ! -f /certs/cert.pem ]; then
-          apk add --no-cache openssl &&
-          openssl req -x509 -newkey rsa:2048 -nodes
-            -keyout /certs/key.pem -out /certs/cert.pem
-            -days 365 -subj "/CN=media-server"
-            -addext "subjectAltName=DNS:media-server,DNS:localhost,IP:127.0.0.1";
-        fi
-      '
+    command: sh -c "apk add --no-cache openssl && openssl req -x509 -newkey rsa:2048 -nodes -keyout /certs/key.pem -out /certs/cert.pem -days 365 -subj '/CN=media-server' -addext 'subjectAltName=DNS:media-server,DNS:localhost,IP:127.0.0.1'"
 
   caddy:
     image: caddy:2-alpine
