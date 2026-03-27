@@ -256,7 +256,7 @@ export default function LessonDetailPage() {
         )}
 
         {/* Mark Complete button */}
-        <div className="sticky bottom-20 md:bottom-4 pb-4">
+        <div className="mb-8">
           <button
             type="button"
             onClick={toggleComplete}
