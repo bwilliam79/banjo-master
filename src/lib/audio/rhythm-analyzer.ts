@@ -6,7 +6,7 @@
  */
 
 /** Minimum RMS to consider the signal "sounding". Lower for mobile mics. */
-const ONSET_THRESHOLD = 0.008;
+const ONSET_THRESHOLD = 0.003;
 
 /** How many ms of silence before we allow a new onset. */
 const ONSET_DEBOUNCE_MS = 50;
