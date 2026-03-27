@@ -6,6 +6,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db/schema';
 import { seedDatabase } from '@/lib/db/seed';
 import type { Lesson, LessonContent } from '@/types/lesson';
+import ExerciseRunner from '@/components/exercise/ExerciseRunner';
 
 function renderContent(block: LessonContent, index: number) {
   switch (block.type) {
@@ -65,6 +66,9 @@ export default function LessonDetailPage() {
   const lesson = useLiveQuery(() => db.lessons.get(lessonId), [lessonId]);
   const progress = useLiveQuery(() => db.userProgress.get('singleton'), []);
 
+  const [activeExerciseId, setActiveExerciseId] = useState<string | null>(null);
+  const [passedExerciseIds, setPassedExerciseIds] = useState<Set<string>>(new Set());
+
   const isCompleted = progress?.completedLessonIds?.includes(lessonId) ?? false;
 
   const toggleComplete = useCallback(async () => {
@@ -108,6 +112,21 @@ export default function LessonDetailPage() {
       </div>
     );
   }
+
+  const handleExerciseComplete = useCallback(
+    (exerciseId: string) =>
+      (_scores: { accuracy: number; timing: number; handPlacement: number }, passed: boolean) => {
+        if (passed) {
+          setPassedExerciseIds((prev) => new Set(prev).add(exerciseId));
+        }
+        setActiveExerciseId(null);
+      },
+    [],
+  );
+
+  const handleExerciseSkip = useCallback(() => {
+    setActiveExerciseId(null);
+  }, []);
 
   const levelColors: Record<string, string> = {
     beginner: 'bg-green-100 text-green-800',
@@ -180,22 +199,53 @@ export default function LessonDetailPage() {
           <div className="mb-8">
             <h2 className="text-sm font-semibold text-foreground mb-3">Exercises</h2>
             <div className="space-y-3">
-              {lesson.exercises.map((exercise) => (
-                <div
-                  key={exercise.id}
-                  className="bg-surface rounded-xl border border-border p-4"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800">
-                      {exercise.type.replace('-', ' ')}
-                    </span>
-                    <span className="text-[10px] text-muted">
-                      Passing score: {exercise.passingScore}%
-                    </span>
+              {lesson.exercises.map((exercise) => {
+                const isPassed = passedExerciseIds.has(exercise.id);
+                const isActive = activeExerciseId === exercise.id;
+
+                if (isActive) {
+                  return (
+                    <ExerciseRunner
+                      key={exercise.id}
+                      exercise={exercise}
+                      lessonId={lessonId}
+                      onComplete={handleExerciseComplete(exercise.id)}
+                      onSkip={handleExerciseSkip}
+                    />
+                  );
+                }
+
+                return (
+                  <div
+                    key={exercise.id}
+                    className={`bg-surface rounded-xl border p-4 ${
+                      isPassed ? 'border-success/40' : 'border-border'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      {isPassed && (
+                        <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-success/10 text-success">
+                          Passed
+                        </span>
+                      )}
+                      <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800">
+                        {exercise.type.replace('-', ' ')}
+                      </span>
+                      <span className="text-[10px] text-muted">
+                        Passing score: {exercise.passingScore}%
+                      </span>
+                    </div>
+                    <p className="text-sm text-foreground mb-3">{exercise.prompt}</p>
+                    <button
+                      type="button"
+                      onClick={() => setActiveExerciseId(exercise.id)}
+                      className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors"
+                    >
+                      {isPassed ? 'Retry Exercise' : 'Start Exercise'}
+                    </button>
                   </div>
-                  <p className="text-sm text-foreground">{exercise.prompt}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
