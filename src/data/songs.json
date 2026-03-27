@@ -1,0 +1,1982 @@
+[
+  {
+    "id": "cripple-creek",
+    "title": "Cripple Creek",
+    "artist": "Traditional",
+    "genre": "Bluegrass",
+    "difficulty": 1,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-cripple-creek",
+      "title": "Cripple Creek",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 120,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5, "technique": "slide" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C"],
+    "duration": 120,
+    "tags": ["traditional", "beginner", "classic"]
+  },
+  {
+    "id": "boil-them-cabbage-down",
+    "title": "Boil Them Cabbage Down",
+    "artist": "Traditional",
+    "genre": "Old-Time",
+    "difficulty": 1,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-boil-cabbage",
+      "title": "Boil Them Cabbage Down",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 110,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "D"],
+    "duration": 90,
+    "tags": ["traditional", "beginner", "old-time"]
+  },
+  {
+    "id": "old-joe-clark",
+    "title": "Old Joe Clark",
+    "artist": "Traditional",
+    "genre": "Bluegrass",
+    "difficulty": 1,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-old-joe-clark",
+      "title": "Old Joe Clark",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 126,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["A", "G", "F"],
+    "duration": 100,
+    "tags": ["traditional", "beginner", "mixolydian"]
+  },
+  {
+    "id": "ground-speed",
+    "title": "Ground Speed",
+    "artist": "Earl Scruggs",
+    "genre": "Bluegrass",
+    "difficulty": 1,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-ground-speed",
+      "title": "Ground Speed (Simplified)",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 108,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D"],
+    "duration": 110,
+    "tags": ["scruggs", "beginner", "simplified"]
+  },
+  {
+    "id": "banjo-in-the-hollow",
+    "title": "Banjo in the Hollow",
+    "artist": "Traditional",
+    "genre": "Old-Time",
+    "difficulty": 1,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-banjo-hollow",
+      "title": "Banjo in the Hollow",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 116,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D"],
+    "duration": 95,
+    "tags": ["traditional", "beginner", "old-time"]
+  },
+  {
+    "id": "foggy-mountain-breakdown",
+    "title": "Foggy Mountain Breakdown",
+    "artist": "Earl Scruggs",
+    "genre": "Bluegrass",
+    "difficulty": 3,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-foggy-mountain",
+      "title": "Foggy Mountain Breakdown",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 160,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5, "technique": "hammer-on" },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["Em", "G", "D"],
+    "duration": 150,
+    "tags": ["scruggs", "intermediate", "classic", "instrumental"]
+  },
+  {
+    "id": "dueling-banjos",
+    "title": "Dueling Banjos",
+    "artist": "Arthur \"Guitar Boogie\" Smith",
+    "genre": "Bluegrass",
+    "difficulty": 3,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-dueling-banjos",
+      "title": "Dueling Banjos",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 132,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 1, "fret": 2, "duration": 1, "offset": 1 },
+            { "string": 1, "fret": 4, "duration": 1, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 1, "offset": 3 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 1, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 2, "offset": 2 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 1, "fret": 2, "duration": 1, "offset": 1 },
+            { "string": 1, "fret": 4, "duration": 1, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 1, "offset": 3 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 1, "duration": 1, "offset": 0 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 1 },
+            { "string": 2, "fret": 0, "duration": 2, "offset": 2 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D", "Em"],
+    "duration": 180,
+    "tags": ["classic", "intermediate", "movie"]
+  },
+  {
+    "id": "cumberland-gap",
+    "title": "Cumberland Gap",
+    "artist": "Traditional",
+    "genre": "Bluegrass",
+    "difficulty": 3,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-cumberland-gap",
+      "title": "Cumberland Gap",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 140,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D"],
+    "duration": 120,
+    "tags": ["traditional", "intermediate", "classic"]
+  },
+  {
+    "id": "salt-creek",
+    "title": "Salt Creek",
+    "artist": "Bill Monroe",
+    "genre": "Bluegrass",
+    "difficulty": 3,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-salt-creek",
+      "title": "Salt Creek",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 148,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["A", "D", "G"],
+    "duration": 130,
+    "tags": ["fiddle-tune", "intermediate", "contest"]
+  },
+  {
+    "id": "blackberry-blossom",
+    "title": "Blackberry Blossom",
+    "artist": "Traditional",
+    "genre": "Bluegrass",
+    "difficulty": 3,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-blackberry-blossom",
+      "title": "Blackberry Blossom",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 144,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "pull-off" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "D", "C", "Em"],
+    "duration": 140,
+    "tags": ["fiddle-tune", "intermediate", "contest"]
+  },
+  {
+    "id": "earls-breakdown",
+    "title": "Earl's Breakdown",
+    "artist": "Earl Scruggs",
+    "genre": "Bluegrass",
+    "difficulty": 5,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-earls-breakdown",
+      "title": "Earl's Breakdown",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 176,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D", "Em"],
+    "duration": 150,
+    "tags": ["scruggs", "advanced", "instrumental", "showcase"]
+  },
+  {
+    "id": "clinch-mountain-backstep",
+    "title": "Clinch Mountain Backstep",
+    "artist": "Ralph Stanley",
+    "genre": "Bluegrass",
+    "difficulty": 5,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-clinch-mountain",
+      "title": "Clinch Mountain Backstep",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 168,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 1, "technique": "hammer-on" },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 3, "technique": "hammer-on" },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D", "Em"],
+    "duration": 130,
+    "tags": ["stanley", "advanced", "backstep", "classic"]
+  },
+  {
+    "id": "blue-bells-of-scotland",
+    "title": "Blue Bells of Scotland",
+    "artist": "Earl Scruggs",
+    "genre": "Bluegrass",
+    "difficulty": 5,
+    "style": "melodic",
+    "tab": {
+      "id": "tab-blue-bells",
+      "title": "Blue Bells of Scotland",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 120,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 4, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 0 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 4, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 5, "duration": 0.5, "offset": 0 },
+            { "string": 1, "fret": 5, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 4, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 0 },
+            { "string": 1, "fret": 5, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 5, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 4, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D"],
+    "duration": 180,
+    "tags": ["scruggs", "advanced", "melodic", "scottish"]
+  },
+  {
+    "id": "home-sweet-home",
+    "title": "Home Sweet Home",
+    "artist": "Earl Scruggs",
+    "genre": "Bluegrass",
+    "difficulty": 5,
+    "style": "melodic",
+    "tab": {
+      "id": "tab-home-sweet-home",
+      "title": "Home Sweet Home",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 100,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 1, "fret": 4, "duration": 0.5, "offset": 3 },
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 2, "fret": 3, "duration": 0.5, "offset": 0 },
+            { "string": 1, "fret": 2, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D"],
+    "duration": 200,
+    "tags": ["scruggs", "advanced", "melodic", "sentimental"]
+  },
+  {
+    "id": "shuckin-the-corn",
+    "title": "Shuckin' the Corn",
+    "artist": "Traditional",
+    "genre": "Bluegrass",
+    "difficulty": 5,
+    "style": "three-finger",
+    "tab": {
+      "id": "tab-shuckin-corn",
+      "title": "Shuckin' the Corn",
+      "tuning": ["G", "D", "G", "B", "D"],
+      "tempo": 160,
+      "measures": [
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 5, "duration": 0.5, "offset": 0 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2, "technique": "pull-off" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2, "technique": "hammer-on" },
+            { "string": 2, "fret": 1, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 0, "technique": "slide" },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 2, "duration": 0.5, "offset": 2, "technique": "slide" },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 2.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 1, "offset": 0 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 1, "fret": 0, "duration": 1, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 0, "technique": "hammer-on" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 0.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 4, "fret": 5, "duration": 0.5, "offset": 2 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        },
+        {
+          "timeSignature": [4, 4],
+          "notes": [
+            { "string": 4, "fret": 4, "duration": 0.5, "offset": 0, "technique": "pull-off" },
+            { "string": 3, "fret": 2, "duration": 0.5, "offset": 0.5, "technique": "pull-off" },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 1 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 1.5 },
+            { "string": 3, "fret": 0, "duration": 0.5, "offset": 2 },
+            { "string": 2, "fret": 0, "duration": 0.5, "offset": 2.5 },
+            { "string": 5, "fret": 0, "duration": 0.5, "offset": 3 },
+            { "string": 1, "fret": 0, "duration": 0.5, "offset": 3.5 }
+          ]
+        }
+      ]
+    },
+    "chordsUsed": ["G", "C", "D", "Em", "Am"],
+    "duration": 145,
+    "tags": ["traditional", "advanced", "contest", "showcase"]
+  }
+]
