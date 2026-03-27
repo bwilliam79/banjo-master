@@ -342,6 +342,7 @@ export default function ExerciseRunner({
           bpm={bpm}
           useCamera={useCamera}
           videoRef={videoRef}
+          cameraStream={cameraStreamRef.current}
           onStop={finishExercise}
         />
       );

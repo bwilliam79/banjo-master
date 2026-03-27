@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import type { Exercise } from '@/types/lesson';
 import type { ExpectedNote } from '@/lib/audio/exercise-pitch-analyzer';
 import { useExerciseStore } from '@/stores/exercise-store';
@@ -11,7 +11,8 @@ interface ExercisePlaybackProps {
   tabSequence: ExpectedNote[];
   bpm: number;
   useCamera: boolean;
-  videoRef: React.RefObject<HTMLVideoElement | null>;
+  videoRef: React.MutableRefObject<HTMLVideoElement | null>;
+  cameraStream: MediaStream | null;
   onStop: () => void;
 }
 
@@ -21,6 +22,7 @@ export default function ExercisePlayback({
   bpm,
   useCamera,
   videoRef,
+  cameraStream,
   onStop,
 }: ExercisePlaybackProps) {
   const { elapsedMs, tabCursor, feedbackMessage, noteEvents } =
@@ -32,6 +34,18 @@ export default function ExercisePlayback({
     tabSequence.length > 0
       ? (tabCursor / tabSequence.length) * 100
       : (elapsedSec / duration) * 100;
+
+  // Re-attach the camera stream when this video element mounts (the preflight
+  // video element was unmounted during countdown, so srcObject needs resetting).
+  const attachStream = useCallback(
+    (el: HTMLVideoElement | null) => {
+      videoRef.current = el;
+      if (el && cameraStream) {
+        el.srcObject = cameraStream;
+      }
+    },
+    [videoRef, cameraStream],
+  );
 
   const chordList = exercise.type === 'play-chord' && Array.isArray(exercise.data?.chords)
     ? (exercise.data.chords as string[])
@@ -121,7 +135,7 @@ export default function ExercisePlayback({
       {useCamera && (
         <div className="relative rounded-lg overflow-hidden bg-black aspect-video">
           <video
-            ref={videoRef}
+            ref={attachStream}
             autoPlay
             playsInline
             muted
