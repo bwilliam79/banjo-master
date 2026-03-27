@@ -5,11 +5,11 @@
  * onsets via amplitude transitions, and scores timing accuracy.
  */
 
-/** Minimum RMS to consider the signal "sounding". */
-const ONSET_THRESHOLD = 0.015;
+/** Minimum RMS to consider the signal "sounding". Lower for mobile mics. */
+const ONSET_THRESHOLD = 0.008;
 
 /** How many ms of silence before we allow a new onset. */
-const ONSET_DEBOUNCE_MS = 60;
+const ONSET_DEBOUNCE_MS = 50;
 
 export interface BeatGrid {
   bpm: number;
