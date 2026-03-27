@@ -1,0 +1,1435 @@
+[
+  {
+    "id": "lesson-01",
+    "title": "Meet Your Banjo",
+    "description": "Learn the parts of a 5-string banjo, how to hold it properly, and tune to open G (gDGBD).",
+    "level": "beginner",
+    "order": 1,
+    "moduleId": "module-1",
+    "moduleName": "Getting Started",
+    "objectives": [
+      "Identify all major parts of the banjo",
+      "Hold the banjo in proper playing position",
+      "Tune to open G tuning (gDGBD)"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Welcome to your banjo journey! The 5-string banjo is a unique instrument with a rich history in American folk, bluegrass, and country music. Before we start playing, let's get familiar with the instrument itself."
+      },
+      {
+        "type": "text",
+        "content": "The banjo has several key parts: the **head** (the drum-like membrane that produces sound), the **neck** (where you press the strings), the **peghead** (where the tuning pegs are), the **bridge** (which transfers vibrations to the head), the **tailpiece** (which anchors the strings), and the distinctive **5th string peg** partway up the neck. The 5th string is the short string that starts at the 5th fret -- it's what gives the banjo its signature sound."
+      },
+      {
+        "type": "text",
+        "content": "**How to hold the banjo:** Sit in a chair with good posture. Rest the banjo pot (body) on your right thigh. The neck should angle slightly upward. Your right arm drapes over the top of the pot, and your right hand floats over the strings near the bridge. Your left hand cradles the neck with your thumb behind it."
+      },
+      {
+        "type": "text",
+        "content": "**Open G Tuning (gDGBD):** Starting from the 4th string (the thickest full-length string): D, G, B, D. The 5th string (the short one) is tuned to a high g. When you strum all strings open, you hear a G major chord! Use an electronic tuner to get each string in tune."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Always tune UP to the note. If a string is sharp (too high), tune it below the target pitch and then tune up. This helps the string stay in tune longer because it seats properly at the nut and bridge."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-01-01",
+        "type": "ear-training",
+        "prompt": "Tune your banjo to open G tuning (gDGBD). Strum all strings and confirm they ring out as a clear G chord.",
+        "data": { "tuning": ["g", "D", "G", "B", "D"] },
+        "passingScore": 80
+      },
+      {
+        "id": "ex-01-02",
+        "type": "ear-training",
+        "prompt": "Pluck each string individually from 4th to 1st, then the 5th string. Say the note name aloud as you pluck each one.",
+        "data": { "strings": ["4th-D", "3rd-G", "2nd-B", "1st-D", "5th-g"] },
+        "passingScore": 80
+      },
+      {
+        "id": "ex-01-03",
+        "type": "ear-training",
+        "prompt": "Practice holding the banjo in proper position for 2 minutes. Check that the neck angles slightly upward and your right hand is relaxed over the strings.",
+        "data": { "durationSeconds": 120 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": [],
+    "estimatedMinutes": 20
+  },
+  {
+    "id": "lesson-02",
+    "title": "Right Hand Basics & Thumb Picks",
+    "description": "Set up your right hand position, learn about picks, and start picking individual strings with your thumb.",
+    "level": "beginner",
+    "order": 2,
+    "moduleId": "module-1",
+    "moduleName": "Getting Started",
+    "objectives": [
+      "Properly wear a thumb pick and finger picks",
+      "Position the right hand for three-finger picking",
+      "Pick individual strings cleanly with the thumb"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Three-finger banjo style (Scruggs style) uses a thumb pick and two metal finger picks on your index and middle fingers. The thumb pick wraps around your thumb with the blade extending past the tip. Finger picks curve under your fingertips with the blade extending past your nails."
+      },
+      {
+        "type": "text",
+        "content": "**Right hand position:** Your ring finger and pinky anchor lightly on the head of the banjo, just behind the bridge. This gives your hand stability. Your thumb, index, and middle fingers float above the strings, ready to pick."
+      },
+      {
+        "type": "text",
+        "content": "**Thumb assignment:** Your thumb generally covers the 5th, 4th, and 3rd strings. Your index finger covers the 2nd string. Your middle finger covers the 1st string. This isn't a rigid rule, but it's the foundation."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** When picking with your thumb, push the string downward (toward the floor) and slightly inward. The motion comes from the thumb joint -- keep your hand still. Start slowly and focus on getting a clean, even tone from each string."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-02-01",
+        "type": "rhythm",
+        "prompt": "Pick the 3rd string with your thumb in a steady rhythm. Play quarter notes at 60 BPM for one minute. Focus on even spacing and consistent volume.",
+        "data": { "bpm": 60, "string": 3, "duration": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-02-02",
+        "type": "rhythm",
+        "prompt": "Alternate between the 4th and 3rd strings with your thumb. Play quarter notes at 60 BPM. Keep the volume consistent between strings.",
+        "data": { "bpm": 60, "strings": [4, 3], "duration": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-02-03",
+        "type": "rhythm",
+        "prompt": "Pick strings 5, 4, 3 in sequence with your thumb, repeating the pattern. Play at 60 BPM. This is the foundation for many roll patterns.",
+        "data": { "bpm": 60, "strings": [5, 4, 3], "duration": 60 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-01"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-03",
+    "title": "The Forward Roll",
+    "description": "Learn the most essential banjo roll pattern -- the forward roll using thumb, index, and middle fingers.",
+    "level": "beginner",
+    "order": 3,
+    "moduleId": "module-1",
+    "moduleName": "Getting Started",
+    "objectives": [
+      "Execute a basic forward roll pattern (T-I-M)",
+      "Play the forward roll across different string sets",
+      "Maintain a steady rhythm at slow tempos"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "The **forward roll** is the most fundamental banjo picking pattern. It uses three fingers in sequence: Thumb (T), Index (I), Middle (M). The pattern repeats continuously, creating the cascading sound that defines bluegrass banjo."
+      },
+      {
+        "type": "text",
+        "content": "**Basic forward roll pattern:** T-I-M-T-I-M-T-I. Using the standard string assignments: 3rd string (T), 2nd string (I), 1st string (M), then repeat. In tablature this looks like picking strings 3-2-1-3-2-1-3-2 in eighth notes."
+      },
+      {
+        "type": "text",
+        "content": "**Start slow!** Set your metronome to 50-60 BPM and play eighth notes. That means two picks per beat. The most common mistake beginners make is trying to play too fast too soon. Speed comes from accuracy, not effort."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Each finger picks in only one direction. The thumb pushes down, while the index and middle fingers pull up toward the ceiling. Keep your wrist relaxed and let the motion come from each finger independently."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-03-01",
+        "type": "play-tab",
+        "prompt": "Play the basic forward roll (3-2-1) at 50 BPM. Repeat for 2 minutes without stopping. Focus on even timing between each note.",
+        "data": { "tab": "3-2-1-3-2-1-3-2", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-03-02",
+        "type": "play-tab",
+        "prompt": "Play the forward roll starting on the 4th string: 4-2-1-4-2-1-4-2. This gives you a deeper, fuller sound. Play at 50 BPM.",
+        "data": { "tab": "4-2-1-4-2-1-4-2", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-03-03",
+        "type": "play-tab",
+        "prompt": "Play the forward roll including the 5th string: 5-2-1-5-2-1-5-2. The 5th string adds the characteristic banjo drone. Play at 50 BPM.",
+        "data": { "tab": "5-2-1-5-2-1-5-2", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-02"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-04",
+    "title": "The Backward Roll",
+    "description": "Learn the backward roll pattern to expand your picking vocabulary and create variety in your playing.",
+    "level": "beginner",
+    "order": 4,
+    "moduleId": "module-1",
+    "moduleName": "Getting Started",
+    "objectives": [
+      "Execute a basic backward roll pattern (M-I-T)",
+      "Combine forward and backward rolls",
+      "Maintain steady rhythm while switching roll directions"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "The **backward roll** reverses the forward roll: Middle (M), Index (I), Thumb (T). Using standard string assignments: 1st string (M), 2nd string (I), 3rd string (T). In tab: 1-2-3-1-2-3-1-2."
+      },
+      {
+        "type": "text",
+        "content": "The backward roll creates a descending sound that contrasts beautifully with the ascending forward roll. Many banjo songs alternate between forward and backward rolls to create musical interest."
+      },
+      {
+        "type": "text",
+        "content": "**Combining rolls:** Try playing two measures of forward roll followed by two measures of backward roll. The transition point is where most beginners stumble, so practice the switch point separately."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** The backward roll often feels awkward at first because it reverses your natural picking motion. Be patient -- it will feel natural with practice. Count aloud: '1-and-2-and-3-and-4-and' to keep your timing steady."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-04-01",
+        "type": "play-tab",
+        "prompt": "Play the basic backward roll (1-2-3) at 50 BPM for 2 minutes. Focus on keeping each note even and clear.",
+        "data": { "tab": "1-2-3-1-2-3-1-2", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-04-02",
+        "type": "play-tab",
+        "prompt": "Alternate: 1 measure forward roll (3-2-1-3-2-1-3-2) then 1 measure backward roll (1-2-3-1-2-3-1-2). Repeat at 50 BPM.",
+        "data": { "tab": "3-2-1-3-2-1-3-2|1-2-3-1-2-3-1-2", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-04-03",
+        "type": "play-tab",
+        "prompt": "Play the backward roll starting from the 5th string area: 1-2-5-1-2-5-1-2 at 50 BPM. This is a very common variation.",
+        "data": { "tab": "1-2-5-1-2-5-1-2", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-03"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-05",
+    "title": "First Chords: G, C, and D7",
+    "description": "Learn three essential chords that form the foundation of countless bluegrass and folk songs.",
+    "level": "beginner",
+    "order": 5,
+    "moduleId": "module-1",
+    "moduleName": "Getting Started",
+    "objectives": [
+      "Finger the G, C, and D7 chord shapes",
+      "Transition between chords smoothly",
+      "Play a forward roll while holding each chord"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Now that you can pick rolls, it's time to add your left hand! These three chords -- G, C, and D7 -- are the I, IV, and V chords in the key of G. Together they let you play hundreds of songs."
+      },
+      {
+        "type": "text",
+        "content": "**G chord:** Great news -- in open G tuning, the G chord is all open strings! No left hand fingers needed. Just play your rolls and you're playing G."
+      },
+      {
+        "type": "text",
+        "content": "**C chord:** Place your index finger on the 1st string, 2nd fret. Place your middle finger on the 2nd string, 1st fret. Place your ring finger on the 4th string, 2nd fret. This shapes takes practice to get clean, but it's one of the most important shapes you'll learn."
+      },
+      {
+        "type": "text",
+        "content": "**D7 chord:** Place your index finger on the 2nd string, 1st fret. Place your middle finger on the 3rd string, 2nd fret. This is a simpler shape than C and sounds great leading back to G."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** When transitioning between chords, keep your fingers close to the fretboard. Don't lift them high in the air. Press the strings just behind the fret (not on top of it) with your fingertips curled. If a string buzzes, check that you're pressing firmly enough and that nearby fingers aren't muting adjacent strings."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-05-01",
+        "type": "play-chord",
+        "prompt": "Form each chord (G, C, D7) and strum all strings. Make sure every string rings clearly with no buzzing. Spend 30 seconds on each chord.",
+        "data": { "chords": ["G", "C", "D7"], "duration": 90 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-05-02",
+        "type": "play-chord",
+        "prompt": "Play a forward roll (3-2-1-3-2-1-3-2) while holding each chord. 4 measures per chord, cycling G-C-D7-G at 50 BPM.",
+        "data": { "chords": ["G", "C", "D7", "G"], "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-05-03",
+        "type": "play-chord",
+        "prompt": "Practice the G to C transition: play 2 measures of G, then switch to C for 2 measures. Repeat 10 times at 50 BPM. Focus on minimizing the gap during the switch.",
+        "data": { "chords": ["G", "C"], "bpm": 50, "repeats": 10 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-04"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-06",
+    "title": "The Alternating Thumb Roll",
+    "description": "Master the alternating thumb roll, one of the most versatile patterns in bluegrass banjo.",
+    "level": "beginner",
+    "order": 6,
+    "moduleId": "module-2",
+    "moduleName": "Essential Techniques",
+    "objectives": [
+      "Execute the alternating thumb roll pattern",
+      "Alternate the thumb between the 3rd and 4th strings",
+      "Play the alternating thumb roll with G, C, and D7 chords"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "The **alternating thumb roll** is arguably the most important roll in bluegrass banjo. The thumb alternates between two bass strings while the index and middle fingers fill in the higher strings. Pattern: T(3)-I(2)-T(4)-M(1) repeated."
+      },
+      {
+        "type": "text",
+        "content": "This roll creates a walking bass effect that drives the rhythm forward. It's the backbone of countless Earl Scruggs arrangements and gives the banjo its characteristic galloping feel."
+      },
+      {
+        "type": "text",
+        "content": "**Variations:** You can also alternate the thumb between the 5th and 3rd strings: T(5)-I(2)-T(3)-M(1). Or between the 5th and 4th strings. Each combination creates a different bass movement."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** The key challenge is getting your thumb to move between strings while your index and middle fingers maintain their positions. Practice the thumb movement alone first (just picking 3-4-3-4 with your thumb), then add the other fingers."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-06-01",
+        "type": "play-tab",
+        "prompt": "Play the alternating thumb roll: T(3)-I(2)-T(4)-M(1) at 50 BPM. Repeat for 2 minutes. Focus on the thumb switching strings smoothly.",
+        "data": { "tab": "3-2-4-1-3-2-4-1", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-06-02",
+        "type": "play-tab",
+        "prompt": "Play the alternating thumb roll variation: T(5)-I(2)-T(3)-M(1) at 50 BPM. This version includes the 5th string drone.",
+        "data": { "tab": "5-2-3-1-5-2-3-1", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-06-03",
+        "type": "play-chord",
+        "prompt": "Play the alternating thumb roll while changing chords: G (2 measures), C (2 measures), D7 (2 measures), G (2 measures) at 50 BPM.",
+        "data": { "tab": "3-2-4-1", "chords": ["G", "C", "D7", "G"], "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-05"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-07",
+    "title": "Pinch Patterns",
+    "description": "Learn to pinch two strings simultaneously for rhythmic emphasis and melodic punctuation.",
+    "level": "beginner",
+    "order": 7,
+    "moduleId": "module-2",
+    "moduleName": "Essential Techniques",
+    "objectives": [
+      "Pinch the thumb and middle finger simultaneously",
+      "Pinch the thumb and index finger simultaneously",
+      "Incorporate pinches into roll patterns"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "A **pinch** is when you pick two strings at the same time. The most common pinch is the thumb and middle finger together (strings 5 and 1, or 3 and 1). Pinches create a bold, accented sound that punctuates your playing."
+      },
+      {
+        "type": "text",
+        "content": "**Thumb-Middle pinch:** Pick the 5th string with your thumb and the 1st string with your middle finger at exactly the same time. Both notes should sound as one. This is often used to start a phrase or emphasize a beat."
+      },
+      {
+        "type": "text",
+        "content": "**Pinch patterns in context:** A common pattern is: Pinch (5+1) - I(2) - M(1) - T(5) - I(2) - M(1) - T(5) - I(2). The pinch gives a strong downbeat, then the roll continues."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** The key to a good pinch is synchronization. Practice the pinch in isolation -- thumb and middle finger together -- until both strings ring at exactly the same instant. If one sounds before the other, slow down and focus on coordination."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-07-01",
+        "type": "play-tab",
+        "prompt": "Practice the thumb-middle pinch on strings 5+1. Pinch, rest, pinch, rest in quarter notes at 60 BPM for 1 minute.",
+        "data": { "tab": "P(5,1)-rest-P(5,1)-rest", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-07-02",
+        "type": "play-tab",
+        "prompt": "Play the pinch pattern: Pinch(5+1) - I(2) - M(1) - T(5) - I(2) - M(1) - T(5) - I(2) at 50 BPM. Repeat for 2 minutes.",
+        "data": { "tab": "P(5,1)-2-1-5-2-1-5-2", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-07-03",
+        "type": "play-tab",
+        "prompt": "Alternate between a pinch pattern and a forward roll: 1 measure pinch pattern, 1 measure forward roll. Repeat at 50 BPM.",
+        "data": { "tab": "P(5,1)-2-1-5-2-1-5-2|3-2-1-3-2-1-3-2", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-06"],
+    "estimatedMinutes": 20
+  },
+  {
+    "id": "lesson-08",
+    "title": "Slides",
+    "description": "Add expressiveness to your playing with slide technique, a fundamental left-hand ornament.",
+    "level": "beginner",
+    "order": 8,
+    "moduleId": "module-2",
+    "moduleName": "Essential Techniques",
+    "objectives": [
+      "Execute a slide from one fret to another",
+      "Incorporate slides into roll patterns",
+      "Use slides for melodic embellishment"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "A **slide** is a left-hand technique where you pick a note and then slide your fretting finger up or down to another fret while the note is still ringing. It creates a smooth, vocal-like connection between two notes."
+      },
+      {
+        "type": "text",
+        "content": "**How to slide:** Press a string at one fret, pick the string, then without lifting your finger, slide it to the target fret while maintaining pressure. The key is keeping consistent pressure on the string throughout the slide so the note doesn't die out."
+      },
+      {
+        "type": "text",
+        "content": "**Common slides:** The most common slide in open G is a 2-3 slide on the 3rd string (sliding from A to Bb, or in fret terms, from the 2nd to 3rd fret). Another common one is the 2-4 slide on the 4th string."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Slides work best when you time the slide to arrive at the target fret right on the beat. The initial note is usually a pickup, with the destination note landing on the beat. Practice with a metronome to get the timing right."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-08-01",
+        "type": "play-tab",
+        "prompt": "Practice a 2-3 slide on the 3rd string. Pick at the 2nd fret and slide to the 3rd fret. Repeat in quarter notes at 60 BPM.",
+        "data": { "tab": "sl(3rd,2,3)", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-08-02",
+        "type": "play-tab",
+        "prompt": "Incorporate the slide into a forward roll: sl(3rd,2-3) - I(2) - M(1) - T(5) - I(2) - M(1) - T(5) - I(2) at 50 BPM.",
+        "data": { "tab": "sl3(2-3)-2-1-5-2-1-5-2", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-08-03",
+        "type": "play-tab",
+        "prompt": "Practice the 2-4 slide on the 4th string within an alternating thumb roll at 50 BPM. This is a key move in many Scruggs licks.",
+        "data": { "tab": "sl4(2-4)-2-3-1-5-2-3-1", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-07"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-09",
+    "title": "Hammer-ons",
+    "description": "Learn the hammer-on technique to add notes without picking, creating smooth legato phrasing.",
+    "level": "beginner",
+    "order": 9,
+    "moduleId": "module-2",
+    "moduleName": "Essential Techniques",
+    "objectives": [
+      "Execute a clean hammer-on from open string to fretted note",
+      "Hammer-on between two fretted notes",
+      "Incorporate hammer-ons into roll patterns"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "A **hammer-on** is a left-hand technique where you sound a note by 'hammering' a finger down onto the fretboard without picking the string. The string is already vibrating (from a previous pick or open string), and your finger hitting the fret produces the next note."
+      },
+      {
+        "type": "text",
+        "content": "**How to hammer-on:** Pick an open string, then quickly and firmly drop your finger onto a fret. The motion should come from your finger -- think of it like tapping a drum. The key is speed and accuracy: hit the fret hard enough to produce a clear note."
+      },
+      {
+        "type": "text",
+        "content": "**Common hammer-ons:** Open to 2nd fret on the 2nd string (B to C#). Open to 2nd fret on the 3rd string (G to A). Open to 2nd fret on the 1st string (D to E). These are the building blocks of many banjo licks."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** The hammer-on note should be nearly as loud as the picked note. If it's quiet or muffled, you're either not hitting hard enough or not landing right behind the fret. Practice the hammer-on in isolation until it rings clearly."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-09-01",
+        "type": "play-tab",
+        "prompt": "Practice hammer-ons from open to 2nd fret on each string (3rd, 2nd, 1st). Pick the open string, hammer on, let it ring. Repeat at 60 BPM.",
+        "data": { "tab": "h(3rd,0-2) h(2nd,0-2) h(1st,0-2)", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-09-02",
+        "type": "play-tab",
+        "prompt": "Play this classic lick: T(3,0) - h(3,0-2) - I(2) - M(1) - T(5) - I(2) - M(1) - T(5) at 50 BPM. The hammer-on on beat 1 adds drive.",
+        "data": { "tab": "3(0)-h3(2)-2-1-5-2-1-5", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-09-03",
+        "type": "play-tab",
+        "prompt": "Combine hammer-on with the alternating thumb roll at 50 BPM. This builds left and right hand coordination.",
+        "data": { "tab": "h3(0-2)-2-4-1-h3(0-2)-2-4-1", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-08"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-10",
+    "title": "Pull-offs",
+    "description": "Complete your left-hand ornament toolkit with pull-offs, the reverse of hammer-ons.",
+    "level": "beginner",
+    "order": 10,
+    "moduleId": "module-2",
+    "moduleName": "Essential Techniques",
+    "objectives": [
+      "Execute a clean pull-off from fretted note to open string",
+      "Combine pull-offs with hammer-ons",
+      "Use pull-offs within roll patterns for classic licks"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "A **pull-off** is the opposite of a hammer-on. You start with a finger on a fret, pick the string, then pull your finger off the fretboard to sound the open string (or a lower fretted note). The pulling motion should pluck the string slightly as you release."
+      },
+      {
+        "type": "text",
+        "content": "**How to pull-off:** Fret a note, pick the string, then pull your fretting finger down and slightly toward the floor. You're essentially plucking the string with your left hand as you release it. This creates a clear second note."
+      },
+      {
+        "type": "text",
+        "content": "**Common pull-offs:** 2nd fret to open on the 3rd string. 2nd fret to open on the 2nd string. These pull-offs appear in almost every bluegrass banjo solo."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Don't just lift your finger off the string -- pull it. If you simply lift, the string will stop vibrating and you'll get a dead note. The pulling motion is what keeps the string ringing. Think of it as a tiny left-hand pluck."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-10-01",
+        "type": "play-tab",
+        "prompt": "Practice pull-offs from 2nd fret to open on the 3rd string. Pick the fretted note, pull off to open. Repeat at 60 BPM.",
+        "data": { "tab": "p(3rd,2-0)", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-10-02",
+        "type": "play-tab",
+        "prompt": "Play a hammer-on/pull-off combination on the 3rd string: open - hammer to 2 - pull off to open. Repeat at 50 BPM.",
+        "data": { "tab": "3(0)-h(2)-p(0)", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-10-03",
+        "type": "play-tab",
+        "prompt": "Classic pull-off lick: T(3,2) - p(3,0) - I(2) - M(1) - T(5) - I(2) - M(1) - T(5) at 50 BPM. This is a quintessential Scruggs lick.",
+        "data": { "tab": "3(2)-p3(0)-2-1-5-2-1-5", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-09"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-11",
+    "title": "Your First Song: Cripple Creek",
+    "description": "Put it all together by learning Cripple Creek, one of the first songs every banjo player learns.",
+    "level": "intermediate",
+    "order": 11,
+    "moduleId": "module-3",
+    "moduleName": "Building Songs",
+    "objectives": [
+      "Play the A section of Cripple Creek",
+      "Play the B section of Cripple Creek",
+      "Perform the complete song with both sections"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "**Cripple Creek** is the quintessential first banjo song. It uses just two chords (G and C), basic rolls, and simple left-hand ornaments. It has two sections (A and B), each repeated, following the form: AABB."
+      },
+      {
+        "type": "text",
+        "content": "**A section:** The A part stays on the G chord and uses a combination of forward rolls and alternating thumb rolls with a few hammer-ons on the 3rd string. The melody is built into the roll patterns you've already learned."
+      },
+      {
+        "type": "text",
+        "content": "**B section:** The B part (sometimes called 'going up the hill') moves to the C chord briefly and features slides and pull-offs. It has a slightly different feel than the A section, giving the song contrast."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Learn each section separately and get it solid before putting them together. Practice the A section until you can play it 5 times in a row without mistakes, then do the same with B. Finally, play the full AABB form."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-11-01",
+        "type": "play-tab",
+        "prompt": "Learn and play the A section of Cripple Creek at 60 BPM. Repeat until comfortable (at least 5 times through).",
+        "data": { "song": "cripple-creek", "section": "A", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-11-02",
+        "type": "play-tab",
+        "prompt": "Learn and play the B section of Cripple Creek at 60 BPM. Focus on the chord change to C and back to G.",
+        "data": { "song": "cripple-creek", "section": "B", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-11-03",
+        "type": "play-tab",
+        "prompt": "Play the full song: AABB form at 60 BPM. Try to play through without stopping. Gradually increase to 80 BPM.",
+        "data": { "song": "cripple-creek", "section": "full", "bpm": 60 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-10"],
+    "estimatedMinutes": 35
+  },
+  {
+    "id": "lesson-12",
+    "title": "Chord Transitions in Songs",
+    "description": "Develop smooth chord transitions so your songs flow without hesitation or missed beats.",
+    "level": "intermediate",
+    "order": 12,
+    "moduleId": "module-3",
+    "moduleName": "Building Songs",
+    "objectives": [
+      "Transition between G, C, and D7 without breaking rhythm",
+      "Anticipate chord changes by preparing fingers early",
+      "Practice common chord progressions at performance tempo"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Smooth chord transitions are what separate a beginner from an intermediate player. The goal is to change chords so seamlessly that a listener can't tell when the switch happens."
+      },
+      {
+        "type": "text",
+        "content": "**Anticipation technique:** Start moving your left hand to the new chord shape slightly before the actual chord change. Use the last note or two of the current measure (often open strings or the 5th string) to give your left hand time to move."
+      },
+      {
+        "type": "text",
+        "content": "**Common progressions to practice:** G-C-G-D7 (the I-IV-I-V in key of G). G-D7-G (a simple turnaround). G-C-D7-G (a full cycle). These patterns appear in virtually every bluegrass song."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** If you're struggling with a transition, isolate it. Just practice going back and forth between two chords (e.g., G to C to G to C) with a simple roll pattern until the switch is automatic. Then add the third chord."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-12-01",
+        "type": "play-chord",
+        "prompt": "Play G-C-G-D7 progression, 2 measures each chord, using the alternating thumb roll at 60 BPM. Repeat 5 times.",
+        "data": { "chords": ["G", "C", "G", "D7"], "bpm": 60, "measuresPerChord": 2 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-12-02",
+        "type": "play-chord",
+        "prompt": "Speed drill: Play G-C transition at 80 BPM, switching every measure. Focus on zero hesitation at the change point.",
+        "data": { "chords": ["G", "C"], "bpm": 80, "measuresPerChord": 1 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-12-03",
+        "type": "play-chord",
+        "prompt": "Play the full G-C-D7-G progression at 70 BPM using pinch patterns on beat 1 of each new chord. The pinch emphasizes the chord change.",
+        "data": { "chords": ["G", "C", "D7", "G"], "bpm": 70, "technique": "pinch-accent" },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-11"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-13",
+    "title": "Adding Melody Notes to Rolls",
+    "description": "Learn to weave melody notes into your roll patterns so listeners can recognize the tune you're playing.",
+    "level": "intermediate",
+    "order": 13,
+    "moduleId": "module-3",
+    "moduleName": "Building Songs",
+    "objectives": [
+      "Identify melody notes within a roll pattern",
+      "Emphasize melody notes through volume or timing",
+      "Arrange a simple melody using forward and alternating thumb rolls"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "The magic of Scruggs-style banjo is that the melody is woven into the continuous roll patterns. Not every note in the roll is a melody note -- some are 'filler' that keep the rhythm going. Your job is to make the melody notes stand out."
+      },
+      {
+        "type": "text",
+        "content": "**How melodies hide in rolls:** Consider a simple melody note on the 1st string. You might play: T(3)-I(2)-M(1*)-T(5)-I(2)-T(3)-I(2)-M(1*). The notes marked with * are the melody. The other notes fill in the roll pattern."
+      },
+      {
+        "type": "text",
+        "content": "**Making melody notes stand out:** You can emphasize melody notes by picking them slightly harder, or by choosing roll patterns that place the melody notes on strong beats (1 and 3). Experienced players do this subtly and instinctively."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Start by singing or humming the melody while playing your rolls. If you can hear the melody coming through, you're on the right track. If the rolls are drowning out the melody, try different roll patterns until the melody is clear."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-13-01",
+        "type": "play-tab",
+        "prompt": "Play a G scale ascending using forward rolls, placing scale notes on the first note of each roll. Practice at 50 BPM.",
+        "data": { "scale": "G-major", "technique": "melody-in-rolls", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-13-02",
+        "type": "play-tab",
+        "prompt": "Arrange 'Mary Had a Little Lamb' melody using roll patterns. Play at 60 BPM. Focus on making the melody audible above the filler notes.",
+        "data": { "song": "mary-had-a-little-lamb", "technique": "melody-arrangement", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-13-03",
+        "type": "ear-training",
+        "prompt": "Record yourself playing Cripple Creek. Listen back and see if you can clearly hear the melody. Note which measures need more melody emphasis.",
+        "data": { "song": "cripple-creek", "technique": "self-evaluation" },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-12"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-14",
+    "title": "Playing with a Metronome",
+    "description": "Develop rock-solid timing by practicing effectively with a metronome at various tempos.",
+    "level": "intermediate",
+    "order": 14,
+    "moduleId": "module-3",
+    "moduleName": "Building Songs",
+    "objectives": [
+      "Play roll patterns in time with a metronome",
+      "Gradually increase tempo without losing accuracy",
+      "Identify and correct common timing issues"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Good timing is what makes music feel good. Playing with a metronome regularly trains your internal clock and prepares you for playing with other musicians. It may feel tedious, but it's one of the most important skills to develop."
+      },
+      {
+        "type": "text",
+        "content": "**How to practice with a metronome:** Start at a tempo where you can play perfectly (even if it feels too slow). Play a piece or pattern 5 times flawlessly at that tempo, then bump it up by 5 BPM. If you make mistakes, drop back down."
+      },
+      {
+        "type": "text",
+        "content": "**Common timing problems:** Rushing (speeding up during easy parts), dragging (slowing down during hard parts), and uneven eighth notes (the space between notes isn't consistent). The metronome reveals all of these."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Try setting the metronome to click on beats 2 and 4 instead of 1 and 3. This creates a backbeat feel and forces you to internalize the pulse rather than relying on the metronome for every beat. It's challenging but incredibly effective."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-14-01",
+        "type": "rhythm",
+        "prompt": "Play a forward roll with the metronome at 60 BPM. Play for 2 minutes without speeding up or slowing down. Every note should align with the click.",
+        "data": { "bpm": 60, "pattern": "forward-roll", "duration": 120 },
+        "passingScore": 80
+      },
+      {
+        "id": "ex-14-02",
+        "type": "rhythm",
+        "prompt": "Tempo ladder: Play Cripple Creek starting at 60 BPM. After 2 clean passes, increase by 10 BPM. Continue until you reach your speed limit.",
+        "data": { "startBpm": 60, "increment": 10, "song": "cripple-creek" },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-14-03",
+        "type": "rhythm",
+        "prompt": "Backbeat practice: Set metronome to click on beats 2 and 4 only. Play any roll pattern at 60 BPM. This trains your internal sense of beat 1.",
+        "data": { "bpm": 60, "clickBeats": [2, 4] },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-13"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-15",
+    "title": "Dynamics and Expression",
+    "description": "Learn to play with varying volume and expression to make your banjo playing musical and compelling.",
+    "level": "intermediate",
+    "order": 15,
+    "moduleId": "module-3",
+    "moduleName": "Building Songs",
+    "objectives": [
+      "Control picking volume from soft to loud",
+      "Apply dynamic contrast within a song",
+      "Use silence (rests) as a musical tool"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Playing all notes at the same volume is like speaking in a monotone -- technically correct but not very interesting. Dynamics (the contrast between loud and soft) bring your playing to life and make people want to listen."
+      },
+      {
+        "type": "text",
+        "content": "**Volume control:** Practice playing your rolls at three distinct volume levels: soft (piano), medium (mezzo), and loud (forte). The key is controlling how deeply you dig into the strings. Less depth = softer. More depth = louder."
+      },
+      {
+        "type": "text",
+        "content": "**Dynamic contrast in songs:** A common approach is to play the A section softer and the B section louder, or vice versa. You can also build intensity gradually over several measures (crescendo) or suddenly drop to quiet (subito piano) for dramatic effect."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** The most powerful dynamic tool is silence. A well-placed rest or pause creates tension and draws the listener in. Don't be afraid to stop rolling for a beat or two -- the contrast makes the music when it returns even more impactful."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-15-01",
+        "type": "rhythm",
+        "prompt": "Play a forward roll at 70 BPM. Play 4 measures soft, 4 measures medium, 4 measures loud. Then reverse: loud to soft. Repeat the cycle.",
+        "data": { "bpm": 70, "dynamics": ["piano", "mezzo", "forte", "forte", "mezzo", "piano"] },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-15-02",
+        "type": "play-tab",
+        "prompt": "Play Cripple Creek with dynamic contrast: A section soft, B section loud. Focus on making the volume difference noticeable.",
+        "data": { "song": "cripple-creek", "dynamics": { "A": "soft", "B": "loud" }, "bpm": 70 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-15-03",
+        "type": "rhythm",
+        "prompt": "Practice crescendo: Start very soft and gradually get louder over 8 measures of rolling. Then decrescendo back down over 8 measures. At 70 BPM.",
+        "data": { "bpm": 70, "technique": "crescendo-decrescendo", "measures": 16 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-14"],
+    "estimatedMinutes": 20
+  },
+  {
+    "id": "lesson-16",
+    "title": "Scruggs Style Patterns",
+    "description": "Dive deeper into the iconic Earl Scruggs picking patterns that defined modern bluegrass banjo.",
+    "level": "intermediate",
+    "order": 16,
+    "moduleId": "module-4",
+    "moduleName": "Intermediate Skills",
+    "objectives": [
+      "Play the Scruggs forward-backward combination roll",
+      "Execute the lick pattern (tag lick / Scruggs ending)",
+      "Apply Scruggs patterns to G, C, and D chord progressions"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Earl Scruggs revolutionized banjo playing in the 1940s. His three-finger picking style became the standard for bluegrass banjo. While you've learned basic rolls, Scruggs' genius was in how he combined and varied these patterns to create musical phrases."
+      },
+      {
+        "type": "text",
+        "content": "**The Scruggs forward-backward roll:** This combines half a forward roll with half a backward roll: T(3)-I(2)-M(1)-T(5)-M(1)-I(2)-T(3)-M(1). It creates a seamless wave-like motion."
+      },
+      {
+        "type": "text",
+        "content": "**The tag lick (Scruggs ending):** This iconic phrase ends countless bluegrass songs. It uses a combination of slides, pull-offs, and a specific roll sequence. It's the 'shave and a haircut' of banjo."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Study Scruggs patterns by slowing down recordings. Many apps let you slow audio without changing pitch. Listen to 'Foggy Mountain Breakdown' and 'Earl's Breakdown' to hear these patterns in action."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-16-01",
+        "type": "play-tab",
+        "prompt": "Play the forward-backward combination roll: T(3)-I(2)-M(1)-T(5)-M(1)-I(2)-T(3)-M(1) at 60 BPM. Repeat for 3 minutes.",
+        "data": { "tab": "3-2-1-5-1-2-3-1", "bpm": 60 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-16-02",
+        "type": "play-tab",
+        "prompt": "Learn the Scruggs tag lick. Practice it slowly at 50 BPM, then gradually increase to 80 BPM.",
+        "data": { "lick": "scruggs-tag", "startBpm": 50, "targetBpm": 80 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-16-03",
+        "type": "play-tab",
+        "prompt": "Apply the forward-backward combination roll over a G-C-D7-G progression. 2 measures per chord at 65 BPM.",
+        "data": { "tab": "3-2-1-5-1-2-3-1", "chords": ["G", "C", "D7", "G"], "bpm": 65 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-15"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-17",
+    "title": "Choke and Bend Technique",
+    "description": "Learn string bending (choke) technique to add bluesy expressiveness to your banjo playing.",
+    "level": "intermediate",
+    "order": 17,
+    "moduleId": "module-4",
+    "moduleName": "Intermediate Skills",
+    "objectives": [
+      "Execute a quarter-step and half-step choke",
+      "Apply chokes to melody notes for emotional effect",
+      "Use choke and release as a rhythmic device"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "A **choke** (also called a bend) is when you push or pull a string sideways across the fretboard while fretting a note, raising its pitch. On banjo, chokes are usually subtle -- a quarter-step or half-step -- and add a vocal, crying quality to the note."
+      },
+      {
+        "type": "text",
+        "content": "**How to choke:** Fret a note firmly, pick the string, then push the string upward (toward the ceiling) while maintaining pressure. The 2nd and 3rd strings are the easiest to choke. The motion comes from your fingers supported by your wrist."
+      },
+      {
+        "type": "text",
+        "content": "**Choke and release:** Pick the note, choke it up, then let it slowly return to the original pitch. This creates a 'wah' effect. You can also pre-choke (bend first, pick, then release) for a descending pitch effect."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Chokes work best in the middle of the neck (frets 5-10) where the strings have more slack. Don't over-bend -- on banjo, subtle chokes sound more musical than dramatic guitar-style bends."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-17-01",
+        "type": "play-tab",
+        "prompt": "Practice a half-step choke on the 3rd string at the 4th fret. Pick, choke up slowly, hold, release. Repeat at your own pace.",
+        "data": { "technique": "choke", "string": 3, "fret": 4, "amount": "half-step" },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-17-02",
+        "type": "play-tab",
+        "prompt": "Practice choke and release on the 2nd string, 5th fret. Pick, choke to a half-step, release back. Time it with a metronome at 50 BPM.",
+        "data": { "technique": "choke-release", "string": 2, "fret": 5, "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-17-03",
+        "type": "play-tab",
+        "prompt": "Incorporate a choke into a roll: play an alternating thumb roll and choke the 3rd string on beat 1 of every other measure at 55 BPM.",
+        "data": { "technique": "choke-in-roll", "bpm": 55 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-16"],
+    "estimatedMinutes": 25
+  },
+  {
+    "id": "lesson-18",
+    "title": "Up-the-Neck Playing",
+    "description": "Venture beyond the first few frets to explore higher positions and expand your melodic range.",
+    "level": "intermediate",
+    "order": 18,
+    "moduleId": "module-4",
+    "moduleName": "Intermediate Skills",
+    "objectives": [
+      "Play a G chord shape at the 9th and 12th fret positions",
+      "Navigate between open position and up-the-neck positions",
+      "Play a simple melody in a higher position"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "So far you've been playing mostly in 'open position' (first few frets). But the banjo neck extends to the 22nd fret! Playing up the neck opens up higher notes, new chord voicings, and a brighter, more cutting tone."
+      },
+      {
+        "type": "text",
+        "content": "**Key positions:** The 7th fret is important -- barring strings 1-4 at the 7th fret gives you a D chord. The 9th fret gives you an E chord shape. The 12th fret is the octave -- everything repeats, so a barre at 12 gives you G again."
+      },
+      {
+        "type": "text",
+        "content": "**Fret markers are your friends:** Most banjos have dots or inlays at frets 3, 5, 7, 10, 12, 15, 17. Use these as landmarks. The 12th fret (usually a double dot) is the octave and a great reference point."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** When moving up the neck, keep your left thumb behind the neck and shift your whole hand as a unit. Don't stretch individual fingers -- move the hand position. Practice sliding up to a position, playing a few notes, and sliding back down."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-18-01",
+        "type": "play-chord",
+        "prompt": "Practice barring at the 7th fret and playing a forward roll. Then barre at the 12th fret and play the same roll. Move between them.",
+        "data": { "positions": [7, 12], "technique": "barre-roll" },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-18-02",
+        "type": "play-tab",
+        "prompt": "Play the Cripple Creek melody starting at the 12th fret (one octave up). Use the same fingerings but shifted up 12 frets. Tempo: 50 BPM.",
+        "data": { "song": "cripple-creek", "position": 12, "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-18-03",
+        "type": "play-tab",
+        "prompt": "Practice transitioning: play 2 measures in open position, slide up to 7th fret for 2 measures, up to 12th for 2 measures, then back down. At 50 BPM.",
+        "data": { "positions": [0, 7, 12, 7, 0], "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-17"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-19",
+    "title": "Melodic Style Basics",
+    "description": "Introduction to melodic (Keith) style playing where scales are played across strings instead of up one string.",
+    "level": "intermediate",
+    "order": 19,
+    "moduleId": "module-4",
+    "moduleName": "Intermediate Skills",
+    "objectives": [
+      "Understand the melodic style concept",
+      "Play a G major scale using the melodic approach",
+      "Apply melodic style to a simple melody"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "**Melodic style** (also called Keith style, after Bill Keith) plays scales and melodies by using a different string for each successive note, rather than playing multiple notes on the same string. This lets you maintain the continuous picking motion while playing clear, distinct melody notes."
+      },
+      {
+        "type": "text",
+        "content": "**The concept:** In Scruggs style, you might play three notes on the 3rd string (open, 2nd fret, 4th fret). In melodic style, you'd play the same notes but distribute them across different strings, using fretted notes to get the right pitches on each string."
+      },
+      {
+        "type": "text",
+        "content": "**G major scale melodically:** By fretting certain strings at specific frets and picking across all strings, you can play a complete G major scale (G-A-B-C-D-E-F#-G) with each note on a different string. No string is picked twice in a row."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Melodic style requires precise left-hand fretwork. Each finger must be in position exactly when the right hand picks that string. Practice the scale very slowly at first, ensuring each note rings clearly before moving on."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-19-01",
+        "type": "play-tab",
+        "prompt": "Play a G major scale using the melodic approach. Each note on a different string. Go up and back down. At 40 BPM to start.",
+        "data": { "scale": "G-major-melodic", "bpm": 40 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-19-02",
+        "type": "play-tab",
+        "prompt": "Play 'Old Joe Clark' using melodic style at 50 BPM. This fiddle tune works especially well with the melodic approach.",
+        "data": { "song": "old-joe-clark", "style": "melodic", "bpm": 50 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-19-03",
+        "type": "play-tab",
+        "prompt": "Practice switching between Scruggs-style rolls and melodic scale passages. 2 measures Scruggs, 2 measures melodic. At 50 BPM.",
+        "data": { "technique": "scruggs-melodic-switch", "bpm": 50 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-18"],
+    "estimatedMinutes": 35
+  },
+  {
+    "id": "lesson-20",
+    "title": "Playing by Ear",
+    "description": "Develop your ear to learn songs without tablature by recognizing intervals, chord changes, and melodic patterns.",
+    "level": "intermediate",
+    "order": 20,
+    "moduleId": "module-4",
+    "moduleName": "Intermediate Skills",
+    "objectives": [
+      "Identify chord changes by ear in a simple song",
+      "Pick out a melody by ear on the banjo",
+      "Develop a practice routine for ear training"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Playing by ear is one of the most valuable skills a musician can develop. Bluegrass is primarily an aural tradition -- historically, banjo players learned by listening and imitating, not reading notation. Training your ear connects you to this tradition."
+      },
+      {
+        "type": "text",
+        "content": "**Start with chord changes:** Listen to a simple song and try to identify when the chord changes happen. In the key of G, most bluegrass songs use G (home), C (the four chord), and D or D7 (the five chord). G feels like home, C feels like a departure, and D7 creates tension that wants to resolve back to G."
+      },
+      {
+        "type": "text",
+        "content": "**Picking out melodies:** Hum the melody, then find each note on the banjo. Start with the first note -- play different strings and frets until you match the pitch. Then find the next note. Work through the melody note by note."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Start with songs you know extremely well -- nursery rhymes, happy birthday, simple folk songs. The better you know a melody in your head, the easier it is to find on the instrument. Practice a little ear training every day."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-20-01",
+        "type": "ear-training",
+        "prompt": "Listen to a recording of 'You Are My Sunshine.' Identify when the chord changes from G to C and from G to D7. Write down the changes.",
+        "data": { "song": "you-are-my-sunshine", "task": "identify-chords" },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-20-02",
+        "type": "ear-training",
+        "prompt": "Pick out the melody of 'Amazing Grace' on your banjo by ear. Use only the first position. Hum each note, then find it on the banjo.",
+        "data": { "song": "amazing-grace", "task": "pick-out-melody" },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-20-03",
+        "type": "ear-training",
+        "prompt": "Interval recognition: play two random notes on the banjo. Identify whether the second note is higher or lower, and estimate the interval (step, skip, or leap).",
+        "data": { "task": "interval-recognition", "duration": 300 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-19"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-21",
+    "title": "Chromatic Runs & Keith Style",
+    "description": "Master chromatic passages and the advanced Keith/melodic style techniques used in progressive bluegrass.",
+    "level": "advanced",
+    "order": 21,
+    "moduleId": "module-5",
+    "moduleName": "Advanced Concepts",
+    "objectives": [
+      "Play chromatic scale passages across strings",
+      "Execute Keith-style fretted string patterns",
+      "Apply chromatic runs to connect chord positions"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "**Chromatic runs** use every fret (every half-step) to create smooth, jazzy connections between notes or chord positions. On banjo, these are executed across multiple strings using the melodic/Keith style approach, keeping the continuous picking pattern intact."
+      },
+      {
+        "type": "text",
+        "content": "**The technique:** Each note of the chromatic scale is assigned to a different string. By fretting the right notes on each string and picking across strings, you create a seamless ascending or descending chromatic line. This requires careful left-hand planning."
+      },
+      {
+        "type": "text",
+        "content": "**Connecting positions:** Chromatic runs are especially useful for connecting open position to up-the-neck positions. A chromatic walk-up from G at open to G at the 12th fret is a show-stopping effect."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Map out the chromatic passage on paper before trying to play it. Write which fret on which string for each note. Then practice the left-hand fingering without the right hand, just pressing the frets in sequence. Add the picking once the left hand knows where to go."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-21-01",
+        "type": "play-tab",
+        "prompt": "Play a chromatic scale from open G to G at the 12th fret using the Keith approach (each note on a different string). Very slow: 40 BPM.",
+        "data": { "scale": "chromatic-G", "technique": "keith-style", "bpm": 40 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-21-02",
+        "type": "play-tab",
+        "prompt": "Practice a chromatic walk-up: connect the G chord in open position to the G barre at fret 12 using chromatic passing tones. At 45 BPM.",
+        "data": { "technique": "chromatic-walkup", "bpm": 45 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-21-03",
+        "type": "play-tab",
+        "prompt": "Apply a short chromatic run (4 notes) as a lead-in to the A section of Cripple Creek. Practice at 55 BPM.",
+        "data": { "song": "cripple-creek", "technique": "chromatic-lead-in", "bpm": 55 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-20"],
+    "estimatedMinutes": 35
+  },
+  {
+    "id": "lesson-22",
+    "title": "Improvisation Over Chord Changes",
+    "description": "Learn to create spontaneous solos by improvising over common bluegrass chord progressions.",
+    "level": "advanced",
+    "order": 22,
+    "moduleId": "module-5",
+    "moduleName": "Advanced Concepts",
+    "objectives": [
+      "Improvise over a I-IV-V progression using roll variations",
+      "Use target notes (chord tones) to guide improvisation",
+      "Build and release tension through note choice and dynamics"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "**Improvisation** is creating music spontaneously, and it's a core part of bluegrass. In a jam session, each musician takes a solo -- your turn to shine. Good improvisation isn't random; it's built on knowing what notes work over each chord and having a vocabulary of licks and patterns to draw from."
+      },
+      {
+        "type": "text",
+        "content": "**Target notes:** When the chord changes, aim to land on a note that's in that chord. For G chord: G, B, D. For C chord: C, E, G. For D7: D, F#, A, C. These chord tones are your 'safe' notes. Use passing tones (other scale notes) to connect them."
+      },
+      {
+        "type": "text",
+        "content": "**Building a solo:** Start simple -- play the melody the first time through. On the second pass, start adding variations: different roll patterns, ornaments (slides, hammer-ons, pull-offs), and maybe a few up-the-neck phrases. Each pass can get more adventurous."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Record backing tracks of simple chord progressions and practice soloing over them. Start with just G-C-D7-G, 4 measures each, looping. Play through it many times, trying different ideas each time. Don't worry about mistakes -- that's how you learn what works."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-22-01",
+        "type": "play-tab",
+        "prompt": "Improvise over a 12-bar G-C-D7-G progression. Focus on landing on chord tones when the chord changes. Play for 5 minutes.",
+        "data": { "chords": ["G", "G", "G", "G", "C", "C", "G", "G", "D7", "C", "G", "G"], "bpm": 70 },
+        "passingScore": 60
+      },
+      {
+        "id": "ex-22-02",
+        "type": "play-tab",
+        "prompt": "Take a solo over Cripple Creek changes. First time: play the melody straight. Second time: add variations. Third time: improvise freely. At 70 BPM.",
+        "data": { "song": "cripple-creek", "technique": "progressive-improv", "bpm": 70 },
+        "passingScore": 60
+      },
+      {
+        "id": "ex-22-03",
+        "type": "play-tab",
+        "prompt": "Tension and release exercise: play 2 measures of dissonant/tense notes, then 2 measures resolving to chord tones. Repeat over a G chord.",
+        "data": { "technique": "tension-release", "chord": "G", "bpm": 60 },
+        "passingScore": 60
+      }
+    ],
+    "prerequisiteIds": ["lesson-21"],
+    "estimatedMinutes": 35
+  },
+  {
+    "id": "lesson-23",
+    "title": "Playing with Other Musicians",
+    "description": "Learn the etiquette, skills, and techniques for playing banjo in a jam session or band setting.",
+    "level": "advanced",
+    "order": 23,
+    "moduleId": "module-5",
+    "moduleName": "Advanced Concepts",
+    "objectives": [
+      "Understand jam session etiquette and structure",
+      "Play appropriate backup during other solos",
+      "Communicate chord changes and endings with other players"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Making music with others is one of the great joys of playing banjo. Bluegrass jam sessions have traditions and etiquette that help everything run smoothly. Understanding these conventions will make you a welcome addition to any jam."
+      },
+      {
+        "type": "text",
+        "content": "**Jam session structure:** Someone calls a song and key. They sing/play the melody for a verse, then soloists take turns. When it's not your turn to solo, you play backup -- quieter, supportive playing that complements the soloist."
+      },
+      {
+        "type": "text",
+        "content": "**Banjo backup:** When others are soloing, play simple rolls at a lower volume. Avoid flashy licks that compete with the soloist. Use vamping (rhythmic chord strumming) or simple alternating thumb rolls. Your job is to support, not show off."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Listen more than you play. The best ensemble musicians are great listeners. Watch for visual cues (a nod means 'your turn to solo'), listen for the chord changes, and stay locked in to the rhythm. If you get lost, drop out quietly, find beat 1, and come back in."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-23-01",
+        "type": "play-chord",
+        "prompt": "Practice backup playing: play simple alternating thumb rolls over a G-C-D7-G progression at 80 BPM, keeping volume at 50% of your normal level.",
+        "data": { "chords": ["G", "C", "D7", "G"], "bpm": 80, "volume": "backup" },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-23-02",
+        "type": "play-tab",
+        "prompt": "Simulate a jam: play backup for 2 choruses (imagining another instrument soloing), then take a solo for 1 chorus. Use Cripple Creek at 90 BPM.",
+        "data": { "song": "cripple-creek", "structure": "backup-backup-solo", "bpm": 90 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-23-03",
+        "type": "rhythm",
+        "prompt": "Practice the 'kick-off': play a 4-measure intro that signals the start of a song. Use Cripple Creek. The kick-off should establish the tempo and key.",
+        "data": { "song": "cripple-creek", "technique": "kickoff", "bpm": 90 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-22"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-24",
+    "title": "Performance and Stage Presence",
+    "description": "Prepare for performing in front of an audience with tips on stage presence, nerves, and showmanship.",
+    "level": "advanced",
+    "order": 24,
+    "moduleId": "module-5",
+    "moduleName": "Advanced Concepts",
+    "objectives": [
+      "Prepare a set list of 3-5 songs for performance",
+      "Manage performance anxiety effectively",
+      "Engage an audience between songs"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Performing for others is the ultimate goal for many musicians. Whether it's an open mic, a house concert, or playing for friends and family, performing pushes your playing to a new level and is deeply rewarding."
+      },
+      {
+        "type": "text",
+        "content": "**Preparing a set:** Choose 3-5 songs you can play confidently. Arrange them with variety -- mix tempos, keys, and moods. Open with something you know cold to build confidence. Save your best piece for the middle or end."
+      },
+      {
+        "type": "text",
+        "content": "**Managing nerves:** Performance anxiety is normal and even helpful -- adrenaline sharpens your focus. Prepare by practicing your set in 'performance mode': play through without stopping, even if you make mistakes. The more you simulate performance, the more comfortable it becomes."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Look up from your fretboard occasionally and make eye contact with the audience. Smile. If you mess up, keep going -- most listeners won't notice small errors. Your energy and enthusiasm matter more than technical perfection."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-24-01",
+        "type": "play-tab",
+        "prompt": "Create and perform a 3-song set list without stopping between songs. Practice transitions. Choose songs with different tempos and feels.",
+        "data": { "task": "set-performance", "songCount": 3 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-24-02",
+        "type": "play-tab",
+        "prompt": "Record yourself playing your best song. Watch the recording and note: posture, facial expression, and any spots where you look down too much.",
+        "data": { "task": "self-recording", "evaluation": ["posture", "expression", "eye-contact"] },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-24-03",
+        "type": "play-tab",
+        "prompt": "Practice recovering from mistakes: deliberately play a wrong note in the middle of a song and smoothly continue without stopping. Repeat until recovery feels natural.",
+        "data": { "task": "mistake-recovery" },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-23"],
+    "estimatedMinutes": 30
+  },
+  {
+    "id": "lesson-25",
+    "title": "Building a Practice Routine",
+    "description": "Design a personalized, effective practice routine that maximizes improvement and keeps you motivated.",
+    "level": "advanced",
+    "order": 25,
+    "moduleId": "module-5",
+    "moduleName": "Advanced Concepts",
+    "objectives": [
+      "Structure a practice session with warm-up, technique, repertoire, and cool-down",
+      "Set measurable goals for weekly improvement",
+      "Balance challenge and fun in your practice"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "content": "Consistent, structured practice is the key to improvement on any instrument. Random noodling is fun but doesn't drive progress as efficiently as focused practice. A good routine balances technique, repertoire, and creativity."
+      },
+      {
+        "type": "text",
+        "content": "**Recommended practice structure (30 minutes):** 5 min warm-up (rolls at comfortable tempo), 10 min technique (work on a specific skill like slides, hammer-ons, or a new roll), 10 min repertoire (learn or polish a song), 5 min free play (improvise, experiment, have fun)."
+      },
+      {
+        "type": "text",
+        "content": "**Setting goals:** Use the SMART framework: Specific, Measurable, Achievable, Relevant, Time-bound. Instead of 'get better at banjo,' try 'play Cripple Creek at 120 BPM without mistakes by the end of this month.' Track your progress."
+      },
+      {
+        "type": "text",
+        "content": "**Tip:** Practice every day, even if it's only for 10 minutes. Short daily sessions are more effective than one long weekly session. Your brain consolidates muscle memory during sleep, so daily repetition is key. Use BanjoMaster's practice tracker to maintain your streak!"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex-25-01",
+        "type": "play-tab",
+        "prompt": "Complete a full 30-minute structured practice session: 5 min warm-up rolls, 10 min technique (your choice), 10 min song work, 5 min free play.",
+        "data": { "task": "structured-practice", "duration": 1800 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-25-02",
+        "type": "ear-training",
+        "prompt": "Write down 3 SMART goals for the next month. Example: 'Learn the A and B sections of Foggy Mountain Breakdown at 100 BPM by [date].'",
+        "data": { "task": "goal-setting", "goalCount": 3 },
+        "passingScore": 70
+      },
+      {
+        "id": "ex-25-03",
+        "type": "play-tab",
+        "prompt": "Create your own warm-up routine: choose 3 roll patterns and 2 left-hand techniques. Play each for 1 minute. This becomes your daily warm-up.",
+        "data": { "task": "create-warmup", "components": 5, "durationEach": 60 },
+        "passingScore": 70
+      }
+    ],
+    "prerequisiteIds": ["lesson-24"],
+    "estimatedMinutes": 35
+  }
+]
