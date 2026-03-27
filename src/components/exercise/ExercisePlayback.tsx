@@ -33,6 +33,13 @@ export default function ExercisePlayback({
       ? (tabCursor / tabSequence.length) * 100
       : (elapsedSec / duration) * 100;
 
+  const chordList = exercise.type === 'play-chord' && Array.isArray(exercise.data?.chords)
+    ? (exercise.data.chords as string[])
+    : null;
+  const currentChord = chordList
+    ? chordList[Math.min(Math.floor(noteEvents.length / 8), chordList.length - 1)] || chordList[0]
+    : null;
+
   return (
     <div className="bg-surface rounded-xl border border-border p-6 space-y-4">
       {/* Header with stop button */}
@@ -94,19 +101,14 @@ export default function ExercisePlayback({
       )}
 
       {/* Chord display */}
-      {exercise.type === 'play-chord' && exercise.data?.chords && (() => {
-        const chordList = exercise.data.chords as string[];
-        const idx = Math.min(Math.floor(noteEvents.length / 8), chordList.length - 1);
-        const currentChord = chordList[idx] || chordList[0];
-        return (
-          <div className="bg-surface-hover rounded-lg p-4 text-center">
-            <span className="text-xs text-muted">Current Chord</span>
-            <div className="text-3xl font-bold text-primary mt-1">
-              {currentChord}
-            </div>
+      {currentChord && (
+        <div className="bg-surface-hover rounded-lg p-4 text-center">
+          <span className="text-xs text-muted">Current Chord</span>
+          <div className="text-3xl font-bold text-primary mt-1">
+            {currentChord}
+          </div>
         </div>
-        );
-      })()}
+      )}
 
       {/* BPM indicator */}
       <div className="flex items-center justify-center gap-2 text-xs text-muted">
