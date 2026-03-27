@@ -1,6 +1,10 @@
 services:
   banjo-master:
-    build: .
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_GIT_SHA: ${GIT_SHA:-unknown}
+        NEXT_PUBLIC_BUILD_DATE: ${BUILD_DATE:-unknown}
     expose:
       - "3000"
     restart: unless-stopped

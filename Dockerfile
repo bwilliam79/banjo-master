@@ -7,6 +7,12 @@ RUN npm install
 # Stage 2: Build the application
 FROM node:20-alpine AS builder
 WORKDIR /app
+
+ARG NEXT_PUBLIC_GIT_SHA=unknown
+ARG NEXT_PUBLIC_BUILD_DATE=unknown
+ENV NEXT_PUBLIC_GIT_SHA=$NEXT_PUBLIC_GIT_SHA
+ENV NEXT_PUBLIC_BUILD_DATE=$NEXT_PUBLIC_BUILD_DATE
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
