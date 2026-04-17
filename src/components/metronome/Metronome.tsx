@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useRef } from 'react';
 import { useMetronomeStore } from '@/stores/metronome-store';
+import { getAudioContext } from '@/lib/audio/audio-context';
 
 const TIME_SIGNATURES: [number, number][] = [
   [4, 4],
@@ -24,21 +25,10 @@ export default function Metronome() {
     setVolume,
   } = useMetronomeStore();
 
-  const audioCtxRef = useRef<AudioContext | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const nextNoteTimeRef = useRef(0);
   const currentBeatRef = useRef(0);
   const tapTimesRef = useRef<number[]>([]);
-
-  const getAudioContext = useCallback(() => {
-    if (!audioCtxRef.current) {
-      audioCtxRef.current = new AudioContext();
-    }
-    if (audioCtxRef.current.state === 'suspended') {
-      audioCtxRef.current.resume();
-    }
-    return audioCtxRef.current;
-  }, []);
 
   const playClick = useCallback(
     (time: number, isAccent: boolean) => {
@@ -56,12 +46,11 @@ export default function Metronome() {
       osc.start(time);
       osc.stop(time + 0.05);
     },
-    [getAudioContext, volume]
+    [volume]
   );
 
   const scheduleAhead = useCallback(() => {
-    const ctx = audioCtxRef.current;
-    if (!ctx) return;
+    const ctx = getAudioContext();
 
     const scheduleAheadTime = 0.1; // seconds to look ahead
     const beatsPerMeasure = timeSignature[0];
@@ -84,7 +73,7 @@ export default function Metronome() {
     nextNoteTimeRef.current = ctx.currentTime;
     setCurrentBeat(0);
     setIsPlaying(true);
-  }, [getAudioContext, setCurrentBeat, setIsPlaying]);
+  }, [setCurrentBeat, setIsPlaying]);
 
   const stopMetronome = useCallback(() => {
     setIsPlaying(false);
@@ -140,15 +129,10 @@ export default function Metronome() {
     }
   }, [setBpm]);
 
-  // Cleanup audio context on unmount
-  useEffect(() => {
-    return () => {
-      if (audioCtxRef.current) {
-        audioCtxRef.current.close();
-        audioCtxRef.current = null;
-      }
-    };
-  }, []);
+  // Note: we do NOT close the AudioContext on unmount — it is a shared
+  // singleton used elsewhere (exercise pitch detection, countdown clicks).
+  // Closing it here would break those features. The scheduler interval is
+  // cleared by the effect above.
 
   const beatsPerMeasure = timeSignature[0];
 

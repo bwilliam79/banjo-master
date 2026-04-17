@@ -45,7 +45,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var s=JSON.parse(localStorage.getItem('banjo-app-settings')||'{}');if(s.state&&s.state.darkMode)document.documentElement.classList.add('dark')}catch(e){}`,
+            __html: `(function(){try{var raw=localStorage.getItem('banjo-app-settings');var dark=null;if(raw){var s=JSON.parse(raw);if(typeof s==='object'&&s!==null&&typeof s.state==='object'&&s.state!==null&&typeof s.state.darkMode==='boolean'){dark=s.state.darkMode;}}if(dark===null){dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}if(dark)document.documentElement.classList.add('dark');}catch(e){try{if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark');}catch(e2){}}})();`,
           }}
         />
       </head>
