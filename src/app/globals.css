@@ -61,7 +61,7 @@
   --color-danger: var(--danger);
 
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
   --font-hand: var(--font-caveat), "Segoe Script", cursive;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 

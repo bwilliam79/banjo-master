@@ -53,16 +53,25 @@ export default function ChordDiagram({
   const svgWidth = totalWidth * scale;
   const svgHeight = totalHeight * scale;
 
+  // Up-the-neck handling: if any fretted note is beyond the 4-fret window,
+  // slide the window so it starts at the lowest fretted note and show a
+  // "Nfr" indicator instead of the nut.
+  const frettedNotes = strings.filter((f) => f > 0);
+  const maxFret = frettedNotes.length > 0 ? Math.max(...frettedNotes) : 0;
+  const minFret = frettedNotes.length > 0 ? Math.min(...frettedNotes) : 1;
+  const startFret = maxFret > numFrets ? minFret : 1;
+  const displayFret = (fret: number) => fret - startFret + 1;
+
   // Get X position for a string (5=leftmost, 1=rightmost)
   const stringX = (stringNum: number) =>
     padding.left + (5 - stringNum) * stringSpacing;
 
-  // Get Y position for a fret (0=nut, 1=first fret, etc.)
+  // Get Y position for a fret (0=top line, 1=first fret below, etc.)
   const fretY = (fret: number) => padding.top + fret * fretSpacing;
 
-  // Get center Y for a finger placed on a fret
-  const fingerY = (fret: number) =>
-    padding.top + (fret - 0.5) * fretSpacing;
+  // Get center Y for a finger placed on a given display row
+  const fingerY = (row: number) =>
+    padding.top + (row - 0.5) * fretSpacing;
 
   const nutThickness = 3 * scale;
   const circleR = 5.5;
@@ -93,15 +102,32 @@ export default function ChordDiagram({
         </text>
       )}
 
-      {/* Nut (thick top bar) */}
-      <rect
-        x={padding.left - 1}
-        y={padding.top - nutThickness / scale}
-        width={gridWidth + 2}
-        height={nutThickness / scale}
-        fill={COLORS.nut}
-        rx={0.5}
-      />
+      {/* Nut (thick top bar) — only when diagram starts at fret 1 */}
+      {startFret === 1 && (
+        <rect
+          x={padding.left - 1}
+          y={padding.top - nutThickness / scale}
+          width={gridWidth + 2}
+          height={nutThickness / scale}
+          fill={COLORS.nut}
+          rx={0.5}
+        />
+      )}
+
+      {/* Starting fret indicator for up-the-neck diagrams */}
+      {startFret > 1 && (
+        <text
+          x={padding.left + gridWidth + 3}
+          y={fingerY(1) + labelFontSize * 0.35}
+          textAnchor="start"
+          fill={COLORS.text}
+          fontSize={labelFontSize}
+          fontWeight="bold"
+          fontFamily="sans-serif"
+        >
+          {startFret}fr
+        </text>
+      )}
 
       {/* Fret lines (horizontal) */}
       {Array.from({ length: numFrets + 1 }, (_, i) => (
@@ -137,7 +163,7 @@ export default function ChordDiagram({
       {barres.map((barre, i) => {
         const x1 = stringX(barre.fromString);
         const x2 = stringX(barre.toString);
-        const y = fingerY(barre.fret);
+        const y = fingerY(displayFret(barre.fret));
         return (
           <rect
             key={`barre-${i}`}
@@ -157,7 +183,7 @@ export default function ChordDiagram({
         if (fret <= 0) return null; // skip open and muted strings
 
         const cx = stringX(stringNum);
-        const cy = fingerY(fret);
+        const cy = fingerY(displayFret(fret));
         const finger = fingers[i];
 
         return (

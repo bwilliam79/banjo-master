@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito, Fraunces, Caveat, Geist_Mono } from "next/font/google";
+import { Nunito, Lora, Caveat, Geist_Mono } from "next/font/google";
 import AppShell from "@/components/layout/AppShell";
 import "./globals.css";
 
@@ -9,11 +9,10 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
   display: "swap",
-  axes: ["SOFT", "WONK", "opsz"],
 });
 
 const caveat = Caveat({
@@ -54,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nunito.variable} ${fraunces.variable} ${caveat.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${nunito.variable} ${lora.variable} ${caveat.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
