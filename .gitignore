@@ -20,6 +20,12 @@
 # production
 /build
 
+# runtime data volume (server-sync progress.json)
+/data
+
+# caddy backups created during deploys
+Caddyfile.bak.*
+
 # misc
 .DS_Store
 *.pem

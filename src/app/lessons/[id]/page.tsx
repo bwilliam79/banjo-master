@@ -6,6 +6,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db/schema';
 import { seedDatabase } from '@/lib/db/seed';
 import type { Lesson, LessonContent } from '@/types/lesson';
+import { syncToServer } from '@/lib/db/serverSync';
 import dynamic from 'next/dynamic';
 
 const ExerciseRunner = dynamic(
@@ -90,6 +91,7 @@ export default function LessonDetailPage() {
         completedLessonIds: [...ids, lessonId],
       });
     }
+    syncToServer();
   }, [lessonId]);
 
   const handleExerciseComplete = useCallback(

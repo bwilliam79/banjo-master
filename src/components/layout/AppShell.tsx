@@ -1,10 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import BottomNav from "./BottomNav";
+import { restoreFromServer } from "@/lib/db/serverSync";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    restoreFromServer();
+  }, []);
+
   return (
     <>
       <Sidebar />
