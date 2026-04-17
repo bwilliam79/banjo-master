@@ -53,34 +53,40 @@ const quickActions = [
 
 export default function HomePage() {
   return (
-    <div className="px-4 py-6 max-w-3xl mx-auto">
-      <section className="mb-8">
-        <h1 className="text-2xl font-bold text-foreground mb-1">
-          Welcome to BanjoMaster
+    <div className="px-4 py-8 max-w-3xl mx-auto">
+      <section className="mb-10">
+        <p className="font-hand text-xl text-primary mb-1">
+          Welcome back,
+        </p>
+        <h1 className="font-serif text-4xl font-semibold text-foreground mb-2 tracking-tight">
+          Pick up where you left off.
         </h1>
-        <p className="text-muted text-sm">
+        <p className="text-secondary text-base">
           Your personal companion for learning and mastering the banjo.
         </p>
       </section>
 
       <section>
-        <h2 className="text-sm font-semibold text-muted uppercase tracking-wider mb-3">
-          Quick Actions
+        <h2 className="font-serif text-lg font-semibold text-foreground mb-4">
+          Where to next?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {quickActions.map((action) => (
             <Link
               key={action.href}
               href={action.href}
-              className="bg-surface rounded-xl p-6 shadow-sm border border-border hover:border-primary/30 hover:shadow-md transition-all group"
+              className="bg-surface rounded-2xl p-6 border border-border cursor-pointer hover:border-primary/40 hover:bg-surface-hover transition-colors duration-200 group"
+              style={{ boxShadow: "var(--shadow-soft)" }}
             >
-              <div className="text-primary mb-3 group-hover:text-primary-light transition-colors">
+              <div className="text-primary mb-3 group-hover:text-primary-dark transition-colors">
                 {action.icon}
               </div>
-              <h3 className="font-semibold text-foreground mb-1">
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-1">
                 {action.title}
               </h3>
-              <p className="text-muted text-sm">{action.description}</p>
+              <p className="text-secondary text-sm leading-relaxed">
+                {action.description}
+              </p>
             </Link>
           ))}
         </div>

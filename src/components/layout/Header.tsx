@@ -6,10 +6,25 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-10 bg-surface/80 backdrop-blur border-b border-border h-14 flex items-center justify-between px-4">
       <div className="flex items-center gap-2 md:hidden">
-        <span className="text-xl" role="img" aria-label="banjo">
-          🪕
-        </span>
-        <span className="text-base font-bold text-foreground tracking-tight">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+          aria-label="BanjoMaster"
+        >
+          <circle cx="7" cy="17" r="5" />
+          <circle cx="7" cy="17" r="2.5" />
+          <path d="M10.5 13.5L19 5l2 2-8.5 8.5z" />
+          <path d="M18 4l4 4" />
+        </svg>
+        <span className="font-serif text-lg font-semibold text-foreground tracking-tight">
           BanjoMaster
         </span>
       </div>
