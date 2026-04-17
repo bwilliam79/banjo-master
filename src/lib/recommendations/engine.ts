@@ -1,5 +1,6 @@
 import type { UserProgress } from '@/types/practice';
 import type { Song } from '@/types/song';
+import type { IconName } from '@/components/ui/TypeIcon';
 
 export interface Recommendation {
   id: string;
@@ -8,7 +9,7 @@ export interface Recommendation {
   description: string;
   priority: number;
   link: string;
-  icon: string;
+  icon: IconName;
 }
 
 const ALL_LESSON_IDS = [
@@ -24,12 +25,12 @@ const ALL_LESSON_IDS = [
   'lesson-10',
 ];
 
-const SKILL_TECHNIQUES: Record<string, { name: string; description: string; icon: string }> = {
-  chords: { name: 'Chord Transitions', description: 'Practice switching between chords smoothly and quickly.', icon: '🎵' },
-  picking: { name: 'Picking Patterns', description: 'Work on your right-hand picking accuracy and speed.', icon: '🤏' },
-  timing: { name: 'Rhythm & Timing', description: 'Practice with a metronome to tighten your timing.', icon: '⏱️' },
-  repertoire: { name: 'Song Review', description: 'Revisit songs you have learned to keep them fresh.', icon: '📖' },
-  theory: { name: 'Music Theory Basics', description: 'Study scales, intervals, and chord construction.', icon: '📐' },
+const SKILL_TECHNIQUES: Record<string, { name: string; description: string; icon: IconName }> = {
+  chords: { name: 'Chord Transitions', description: 'Practice switching between chords smoothly and quickly.', icon: 'music-note' },
+  picking: { name: 'Picking Patterns', description: 'Work on your right-hand picking accuracy and speed.', icon: 'pluck' },
+  timing: { name: 'Rhythm & Timing', description: 'Practice with a metronome to tighten your timing.', icon: 'timer' },
+  repertoire: { name: 'Song Review', description: 'Revisit songs you have learned to keep them fresh.', icon: 'book-open' },
+  theory: { name: 'Music Theory Basics', description: 'Study scales, intervals, and chord construction.', icon: 'ruler' },
 };
 
 function getDaysSince(dateStr: string): number {
@@ -64,7 +65,7 @@ export function generateRecommendations(
       description: 'Begin your banjo journey with "Meet Your Banjo" -- learn the parts, holding position, and tuning.',
       priority: 100,
       link: '/lessons/lesson-01',
-      icon: '🎯',
+      icon: 'target',
     });
   }
 
@@ -79,7 +80,7 @@ export function generateRecommendations(
       description: `You have completed ${completedLessons.length} lessons. Keep the momentum going with the next one!`,
       priority: 90,
       link: `/lessons/${nextLesson}`,
-      icon: '📚',
+      icon: 'library',
     });
   }
 
@@ -115,7 +116,7 @@ export function generateRecommendations(
       description: `It has been ${daysSincePractice === Infinity ? 'a while' : `${daysSincePractice} days`} since your last practice. Start with a quick review to warm up.`,
       priority: 85,
       link: `/lessons/${reviewLesson}`,
-      icon: '👋',
+      icon: 'sparkles',
     });
   }
 
@@ -134,7 +135,7 @@ export function generateRecommendations(
       description: `${song.artist} -- ${song.genre} (Difficulty ${song.difficulty}/5). A great match for your current level.`,
       priority: 50 + song.difficulty * 5,
       link: `/songs/${song.id}`,
-      icon: '🎶',
+      icon: 'music-note',
     });
   }
 
@@ -158,7 +159,7 @@ export function generateRecommendations(
       description: `Work on these chords for upcoming songs: ${chordList}.`,
       priority: 60,
       link: '/chords',
-      icon: '✋',
+      icon: 'hand',
     });
   }
 
