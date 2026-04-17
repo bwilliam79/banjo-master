@@ -1,18 +1,21 @@
 /**
  * Singleton AudioContext manager.
  *
- * Provides helpers to create / resume an AudioContext, acquire a microphone
- * stream, and build an AnalyserNode suitable for pitch detection.
+ * The AudioContext itself is kept alive for the lifetime of the tab — it's
+ * cheap to hold, and closing it on component unmount used to break the
+ * Metronome (which uses the same singleton) when the Tuner or an Exercise
+ * ran first and then unmounted.
+ *
+ * Microphone access is refcounted: each caller that needs the mic (via
+ * createAnalyser / getMicrophoneStream) takes one reference, and releases
+ * it via cleanupAudio. Mic tracks stop when the refcount hits zero. Extra
+ * release calls are clamped, so redundant cleanups are harmless.
  */
 
 let audioContext: AudioContext | null = null;
 let microphoneStream: MediaStream | null = null;
+let micRefCount = 0;
 
-/**
- * Return (or lazily create) a singleton AudioContext.
- * Automatically resumes if the context is in the "suspended" state
- * (which happens before a user gesture in most browsers).
- */
 export function getAudioContext(): AudioContext {
   if (!audioContext) {
     audioContext = new AudioContext();
@@ -23,15 +26,9 @@ export function getAudioContext(): AudioContext {
   return audioContext;
 }
 
-/**
- * Request microphone access and return the MediaStream.
- *
- * The stream is cached so repeated calls reuse the same mic permission grant.
- * If the user denies permission an error is thrown with a human-readable
- * message.
- */
 export async function getMicrophoneStream(): Promise<MediaStream> {
   if (microphoneStream && microphoneStream.active) {
+    micRefCount++;
     return microphoneStream;
   }
 
@@ -43,6 +40,7 @@ export async function getMicrophoneStream(): Promise<MediaStream> {
         autoGainControl: false,
       },
     });
+    micRefCount++;
     return microphoneStream;
   } catch (err) {
     if (err instanceof DOMException) {
@@ -63,13 +61,6 @@ export async function getMicrophoneStream(): Promise<MediaStream> {
   }
 }
 
-/**
- * Create an AnalyserNode connected to the microphone via the singleton
- * AudioContext.
- *
- * The returned analyser has an fftSize of 4096 which gives good frequency
- * resolution for banjo pitch detection down to ~80 Hz.
- */
 export async function createAnalyser(): Promise<AnalyserNode> {
   const ctx = getAudioContext();
   const stream = await getMicrophoneStream();
@@ -80,23 +71,20 @@ export async function createAnalyser(): Promise<AnalyserNode> {
   analyser.smoothingTimeConstant = 0.8;
 
   source.connect(analyser);
-  // Do NOT connect analyser to destination — we only want to read data,
-  // not play the microphone audio back through speakers.
-
   return analyser;
 }
 
 /**
- * Stop all microphone tracks and close the AudioContext.
- * Safe to call multiple times.
+ * Release one microphone reference. When the refcount reaches zero the
+ * mic tracks are stopped. The AudioContext is left alive.
+ * Safe to call more times than you acquired — extras are no-ops.
  */
 export function cleanupAudio(): void {
-  if (microphoneStream) {
+  if (micRefCount > 0) {
+    micRefCount -= 1;
+  }
+  if (micRefCount === 0 && microphoneStream) {
     microphoneStream.getTracks().forEach((t) => t.stop());
     microphoneStream = null;
-  }
-  if (audioContext) {
-    audioContext.close();
-    audioContext = null;
   }
 }
