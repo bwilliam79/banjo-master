@@ -60,7 +60,17 @@ function exerciseTypeToSkill(
  */
 export async function saveExerciseResult(result: ExerciseResult): Promise<void> {
   const progress = await db.userProgress.get('singleton');
-  if (!progress) return;
+  if (!progress) {
+    // This should not happen once the app has been opened once — the
+    // singleton UserProgress row is expected to be seeded at startup.
+    // Silently skipping would lose the exercise result without a trace,
+    // so surface it for debugging.
+    console.warn(
+      '[saveExerciseResult] No userProgress singleton found — skipping save. ' +
+        `exerciseId=${result.exerciseId} lessonId=${result.lessonId}`,
+    );
+    return;
+  }
 
   // Create a practice session record.
   const session: PracticeSession = {

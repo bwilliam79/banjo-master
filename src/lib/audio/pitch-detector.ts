@@ -100,19 +100,28 @@ export function detectPitch(analyser: AnalyserNode): PitchResult | null {
   if (tauEstimate === -1) return null;
 
   // ---- YIN step 5: parabolic interpolation --------------------------------
-  let betterTau: number;
+  // Refine the integer tauEstimate to a fractional position using a parabola
+  // through (x0, x1, x2). This only makes sense when x0 < x1 < x2 (i.e. we
+  // have a neighbour on BOTH sides). When tauEstimate is clamped at either
+  // buffer boundary we have no parabola, so we must skip interpolation
+  // entirely and return the integer tauEstimate directly — attempting to
+  // interpolate at the edge can divide by ~0 (if s1 ≈ s2) and produce an
+  // out-of-range frequency.
   const x0 = tauEstimate < 1 ? tauEstimate : tauEstimate - 1;
   const x2 = tauEstimate + 1 < halfSize ? tauEstimate + 1 : tauEstimate;
 
-  if (x0 === tauEstimate) {
-    betterTau = yinBuffer[tauEstimate] <= yinBuffer[x2] ? tauEstimate : x2;
-  } else if (x2 === tauEstimate) {
-    betterTau = yinBuffer[tauEstimate] <= yinBuffer[x0] ? tauEstimate : x0;
+  let betterTau: number;
+  if (x0 === tauEstimate || x2 === tauEstimate) {
+    // At a boundary — no fractional refinement is possible. Use the
+    // integer estimate as-is.
+    betterTau = tauEstimate;
   } else {
     const s0 = yinBuffer[x0];
     const s1 = yinBuffer[tauEstimate];
     const s2 = yinBuffer[x2];
-    betterTau = tauEstimate + (s2 - s0) / (2 * (2 * s1 - s2 - s0));
+    const denom = 2 * (2 * s1 - s2 - s0);
+    // Guard against a flat curve (denom ≈ 0) which would blow up the offset.
+    betterTau = denom !== 0 ? tauEstimate + (s2 - s0) / denom : tauEstimate;
   }
 
   const frequency = sampleRate / betterTau;

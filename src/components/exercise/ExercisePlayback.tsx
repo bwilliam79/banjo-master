@@ -47,9 +47,13 @@ export default function ExercisePlayback({
     [videoRef, cameraStream],
   );
 
-  const chordList = exercise.type === 'play-chord' && Array.isArray(exercise.data?.chords)
-    ? (exercise.data.chords as string[])
-    : null;
+  const rawChords =
+    exercise.type === 'play-chord' && Array.isArray(exercise.data?.chords)
+      ? (exercise.data.chords as string[])
+      : null;
+  // Guard against an empty chords array — otherwise chordList[-1] below
+  // would return undefined and crash the rendering path.
+  const chordList = rawChords && rawChords.length > 0 ? rawChords : null;
   const currentChord = chordList
     ? chordList[Math.min(Math.floor(noteEvents.length / 8), chordList.length - 1)] || chordList[0]
     : null;

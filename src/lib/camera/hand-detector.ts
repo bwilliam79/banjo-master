@@ -5,12 +5,40 @@
  * expected fretting (left) and picking (right) zones of the camera frame.
  *
  * Lazy-loads the WASM assets on first use to avoid blocking initial page load.
+ *
+ * SECURITY / SUPPLY-CHAIN NOTE
+ * ----------------------------
+ * MediaPipe's FilesetResolver loads WASM files at runtime via dynamic fetch()
+ * calls issued from inside the vendor bundle. This bypasses <script integrity>
+ * / SRI — there is no tag we can attach a hash to.
+ *
+ * Mitigations applied here:
+ *   1. The WASM CDN URL is PINNED to a specific version matching the installed
+ *      npm package (`@mediapipe/tasks-vision` in package.json), NOT `@latest`.
+ *      This blocks silent upstream swaps of the WASM bytes.
+ *   2. The model asset URL is PINNED to a dated Google Storage path instead of
+ *      the `/latest/` alias, for the same reason.
+ *
+ * Residual risk: if jsdelivr or storage.googleapis.com is compromised, the
+ * served bytes could differ from the expected version. To eliminate this,
+ * bundle the WASM/model locally (copy to /public at build time) and point
+ * FilesetResolver at the same-origin paths. Tracked as a future hardening item.
+ *
+ * Keep MEDIAPIPE_VERSION in sync with the @mediapipe/tasks-vision dependency
+ * version in package.json.
  */
 
 import type {
   HandLandmarker,
   HandLandmarkerResult,
 } from '@mediapipe/tasks-vision';
+
+/** Pinned version — MUST match package.json's @mediapipe/tasks-vision. */
+const MEDIAPIPE_VERSION = '0.10.22';
+const WASM_CDN_URL = `https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${MEDIAPIPE_VERSION}/wasm`;
+/** Pinned hand-landmarker model (not /latest/). */
+const HAND_LANDMARKER_MODEL_URL =
+  'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task';
 
 let handLandmarker: HandLandmarker | null = null;
 let initPromise: Promise<HandLandmarker> | null = null;
@@ -27,14 +55,11 @@ export async function initHandDetector(): Promise<HandLandmarker> {
     const vision = await import('@mediapipe/tasks-vision');
     const { HandLandmarker: HL, FilesetResolver } = vision;
 
-    const filesetResolver = await FilesetResolver.forVisionTasks(
-      'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm',
-    );
+    const filesetResolver = await FilesetResolver.forVisionTasks(WASM_CDN_URL);
 
     handLandmarker = await HL.createFromOptions(filesetResolver, {
       baseOptions: {
-        modelAssetPath:
-          'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task',
+        modelAssetPath: HAND_LANDMARKER_MODEL_URL,
         delegate: 'GPU',
       },
       runningMode: 'VIDEO',
@@ -171,6 +196,15 @@ export function analyzeHandPosition(
     overallScore: Math.min(100, score),
     message,
   };
+}
+
+/**
+ * Report whether the detector is currently initialized and usable.
+ * Callers should check this before each frame to avoid calling into a
+ * detector that has been closed by concurrent cleanup.
+ */
+export function isHandDetectorReady(): boolean {
+  return handLandmarker !== null;
 }
 
 /**

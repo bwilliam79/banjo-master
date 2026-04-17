@@ -31,6 +31,7 @@ export default function ExercisePreflight({
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const rafRef = useRef<number | null>(null);
+  const cameraStartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Start mic on mount.
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function ExercisePreflight({
     let cancelled = false;
 
     // Wait for video element to mount.
-    const timer = setTimeout(async () => {
+    cameraStartTimeoutRef.current = setTimeout(async () => {
       if (!videoRef.current) return;
       try {
         const stream = await startCamera(videoRef.current, facingMode);
@@ -92,7 +93,10 @@ export default function ExercisePreflight({
 
     return () => {
       cancelled = true;
-      clearTimeout(timer);
+      if (cameraStartTimeoutRef.current) {
+        clearTimeout(cameraStartTimeoutRef.current);
+        cameraStartTimeoutRef.current = null;
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [useCamera, facingMode]);
@@ -123,6 +127,10 @@ export default function ExercisePreflight({
   const handleBack = useCallback(() => {
     // Clean everything up.
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    if (cameraStartTimeoutRef.current) {
+      clearTimeout(cameraStartTimeoutRef.current);
+      cameraStartTimeoutRef.current = null;
+    }
     if (streamRef.current) {
       stopCamera(streamRef.current);
       streamRef.current = null;

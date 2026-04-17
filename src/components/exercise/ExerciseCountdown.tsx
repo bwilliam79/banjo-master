@@ -15,35 +15,55 @@ export default function ExerciseCountdown({
   onComplete,
 }: ExerciseCountdownProps) {
   const [currentBeat, setCurrentBeat] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const beatRef = useRef(0);
 
+  // Keep the latest bpm / callbacks in refs so the scheduled tick reads
+  // the current value without needing to re-setup the whole countdown
+  // (which would reset the beat count) when bpm changes mid-countdown.
+  const bpmRef = useRef(bpm);
+  const beatsRef = useRef(beats);
+  const onCompleteRef = useRef(onComplete);
   useEffect(() => {
-    const intervalMs = 60_000 / bpm;
+    bpmRef.current = bpm;
+  }, [bpm]);
+  useEffect(() => {
+    beatsRef.current = beats;
+  }, [beats]);
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
+  useEffect(() => {
     // Play the first click immediately.
     playClick(true);
     setCurrentBeat(1);
     beatRef.current = 1;
 
-    timerRef.current = setInterval(() => {
+    const tick = () => {
       beatRef.current += 1;
       const b = beatRef.current;
 
-      if (b > beats) {
-        if (timerRef.current) clearInterval(timerRef.current);
-        onComplete();
+      if (b > beatsRef.current) {
+        onCompleteRef.current();
         return;
       }
 
       setCurrentBeat(b);
-      playClick(b === beats);
-    }, intervalMs);
+      playClick(b === beatsRef.current);
+
+      // Re-read bpm each tick so a slider change mid-countdown takes effect
+      // on the NEXT beat without resetting the count.
+      const intervalMs = 60_000 / bpmRef.current;
+      timerRef.current = setTimeout(tick, intervalMs);
+    };
+
+    const initialInterval = 60_000 / bpmRef.current;
+    timerRef.current = setTimeout(tick, initialInterval);
 
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -27,6 +27,7 @@ import {
   detectHands,
   analyzeHandPosition,
   cleanupHandDetector,
+  isHandDetectorReady,
 } from '@/lib/camera/hand-detector';
 import { stopCamera } from '@/lib/camera/camera-manager';
 import ExerciseSetup from './ExerciseSetup';
@@ -35,7 +36,11 @@ import ExerciseCountdown from './ExerciseCountdown';
 import ExercisePlayback from './ExercisePlayback';
 import ExerciseReview from './ExerciseReview';
 
-// Direct access to store state outside React render cycle.
+// Direct access to store state outside the React render cycle.
+// Used for one-shot reads/writes inside RAF ticks, setInterval callbacks,
+// and event handlers where React reactivity is NOT needed — these paths
+// already re-render via the `useExerciseStore()` hook at the top of the
+// component. Do not use this pattern in render; subscribe via the hook.
 const getState = () => useExerciseStore.getState();
 
 interface ExerciseRunnerProps {
@@ -89,6 +94,8 @@ export default function ExerciseRunner({
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
     }
+    // Clear the hand-detection interval BEFORE closing the detector, so
+    // no stale async callback can invoke a freshly-closed HandLandmarker.
     if (handIntervalRef.current) {
       clearInterval(handIntervalRef.current);
       handIntervalRef.current = null;
@@ -132,6 +139,8 @@ export default function ExerciseRunner({
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
     }
+    // Clear the hand-detection interval here too, mirroring cleanup().
+    // Stale ticks after this point could invoke a closed detector.
     if (handIntervalRef.current) {
       clearInterval(handIntervalRef.current);
       handIntervalRef.current = null;
@@ -192,8 +201,14 @@ export default function ExerciseRunner({
     if (cameraStreamRef.current && videoRef.current) {
       const video = videoRef.current;
       handIntervalRef.current = setInterval(async () => {
+        // Guard: the exercise may have been stopped or the detector closed
+        // between scheduling this tick and running it. detectHands() awaits
+        // WASM init which yields the event loop.
+        if (stoppedRef.current || !isHandDetectorReady()) return;
         if (!video || video.readyState < 2) return;
         const result = await detectHands(video);
+        // Re-check after the async boundary — cleanup may have run.
+        if (stoppedRef.current || !isHandDetectorReady()) return;
         if (result) {
           const feedback = analyzeHandPosition(result);
           handScoresRef.current.push(feedback.overallScore);
@@ -209,7 +224,20 @@ export default function ExerciseRunner({
       const elapsed = performance.now() - startTimeRef.current;
       getState().setElapsedMs(elapsed);
 
+      // Normal completion buffer (duration + 2s grace for a final onset).
       if (elapsed > duration * 1000 + 2000) {
+        finishExercise();
+        return;
+      }
+
+      // Safety net: if something wedged the completion path, force-stop
+      // well past the expected end so the exercise can't run forever.
+      if (elapsed > duration * 1000 * 1.5) {
+        console.warn(
+          `[ExerciseRunner] Force-stopping exercise — elapsed=${Math.round(
+            elapsed,
+          )}ms exceeded 1.5x duration (${duration}s).`,
+        );
         finishExercise();
         return;
       }
