@@ -5,9 +5,5 @@
 :443 {
 	tls /etc/caddy/certs/cert.pem /etc/caddy/certs/key.pem
 
-	reverse_proxy banjo-master:3000
-}
-
-:80 {
-	redir https://{host}{uri} permanent
+	reverse_proxy app:3000
 }

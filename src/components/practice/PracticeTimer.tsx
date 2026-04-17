@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { db } from '@/lib/db/schema';
+import { syncToServer } from '@/lib/db/serverSync';
 import type { PracticeActivity } from '@/types/practice';
 
 const ACTIVITY_TYPES: { value: PracticeActivity['type']; label: string }[] = [
@@ -99,6 +100,7 @@ export default function PracticeTimer({ onStop }: PracticeTimerProps) {
       }
     }
 
+    syncToServer();
     setElapsed(0);
     accumulatedRef.current = 0;
     onStop?.();
