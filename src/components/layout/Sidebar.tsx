@@ -79,11 +79,26 @@ export default function Sidebar() {
 
   return (
     <aside className="hidden md:flex fixed left-0 top-0 h-full w-64 bg-surface border-r border-border flex-col z-20">
-      <div className="flex items-center gap-2 px-6 h-14 border-b border-border shrink-0">
-        <span className="text-2xl" role="img" aria-label="banjo">
-          🪕
-        </span>
-        <span className="text-lg font-bold text-foreground tracking-tight">
+      <div className="flex items-center gap-2.5 px-6 h-14 border-b border-border shrink-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+          aria-label="BanjoMaster"
+        >
+          <circle cx="7" cy="17" r="5" />
+          <circle cx="7" cy="17" r="2.5" />
+          <path d="M10.5 13.5L19 5l2 2-8.5 8.5z" />
+          <path d="M18 4l4 4" />
+        </svg>
+        <span className="font-serif text-xl font-semibold text-foreground tracking-tight">
           BanjoMaster
         </span>
       </div>

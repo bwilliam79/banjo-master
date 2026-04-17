@@ -1,20 +1,47 @@
 @import "tailwindcss";
 
+/* Warm & Handcrafted — palette inspired by aged paper, walnut wood,
+   terracotta clay, and banjo brass hardware. */
 :root {
-  --background: #faf6f1;
-  --foreground: #2d1810;
-  --primary: #b45309;
+  --background: #f5efe4;
+  --foreground: #2b1810;
+  --primary: #b4531f;
   --primary-light: #d97706;
-  --primary-dark: #92400e;
-  --secondary: #78716c;
-  --accent: #c2410c;
-  --surface: #ffffff;
-  --surface-hover: #f5f0eb;
-  --border: #d6cfc7;
-  --muted: #a8a29e;
-  --success: #16a34a;
-  --warning: #ca8a04;
-  --danger: #dc2626;
+  --primary-dark: #7c2d12;
+  --secondary: #7a6655;
+  --accent: #c8932b;
+  --surface: #fbf7ef;
+  --surface-hover: #efe7d8;
+  --border: #d8cdb8;
+  --muted: #a89684;
+  --success: #5b8c3e;
+  --warning: #c08a2b;
+  --danger: #b4362d;
+
+  --shadow-soft: 0 1px 2px rgba(82, 45, 20, 0.06), 0 4px 12px rgba(82, 45, 20, 0.05);
+  --shadow-lift: 0 2px 4px rgba(82, 45, 20, 0.08), 0 8px 20px rgba(82, 45, 20, 0.08);
+
+  --ease-warm: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dark {
+  --background: #1a1108;
+  --foreground: #f0e5d1;
+  --primary: #e68a3b;
+  --primary-light: #f4a85c;
+  --primary-dark: #b4531f;
+  --secondary: #b8a08a;
+  --accent: #d9a84e;
+  --surface: #271a0f;
+  --surface-hover: #322316;
+  --border: #3f2e1d;
+  --muted: #8a7562;
+  --success: #7fb35a;
+  --warning: #d9a84e;
+  --danger: #d25747;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 @theme inline {
@@ -32,37 +59,73 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-.dark {
-  --background: #1c1210;
-  --foreground: #f5f0eb;
-  --primary: #d97706;
-  --primary-light: #f59e0b;
-  --primary-dark: #b45309;
-  --secondary: #a8a29e;
-  --surface: #292019;
-  --surface-hover: #342a20;
-  --border: #44372c;
-  --muted: #78716c;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-hand: var(--font-caveat), "Segoe Script", cursive;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  /* Fiber-like paper grain — tiny SVG noise baked inline. Kept at ~4% so it
+     reads as texture, not pattern. The image is cacheable data-URI, no fetch. */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.09 0 0 0 0 0.05 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.04'/></svg>");
+  background-repeat: repeat;
 }
 
-/* Scrollbar styling */
+.dark body {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 0.85 0 0 0 0 0.6 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.06'/></svg>");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Scrollbar — warm tones that match the palette */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 3px;
+  border-radius: 4px;
+  border: 2px solid var(--background);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Focus ring consistent with the warm palette */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

@@ -35,7 +35,12 @@ export default function ExerciseCountdown({
   }, [onComplete]);
 
   useEffect(() => {
-    // Play the first click immediately.
+    // Anchor each beat to a scheduled wall-clock time rather than re-adding
+    // the interval from wherever the last setTimeout happened to fire.
+    // setTimeout(fn, N) waits *at least* N ms; over several beats that slop
+    // compounds into audible drift on the metronome clicks.
+    let nextBeatAt = performance.now() + 60_000 / bpmRef.current;
+
     playClick(true);
     setCurrentBeat(1);
     beatRef.current = 1;
@@ -52,14 +57,15 @@ export default function ExerciseCountdown({
       setCurrentBeat(b);
       playClick(b === beatsRef.current);
 
-      // Re-read bpm each tick so a slider change mid-countdown takes effect
-      // on the NEXT beat without resetting the count.
-      const intervalMs = 60_000 / bpmRef.current;
-      timerRef.current = setTimeout(tick, intervalMs);
+      // Add the interval to the *scheduled* time, not the current time,
+      // so a late tick doesn't push subsequent beats later too.
+      nextBeatAt += 60_000 / bpmRef.current;
+      const delay = Math.max(0, nextBeatAt - performance.now());
+      timerRef.current = setTimeout(tick, delay);
     };
 
-    const initialInterval = 60_000 / bpmRef.current;
-    timerRef.current = setTimeout(tick, initialInterval);
+    const initialDelay = Math.max(0, nextBeatAt - performance.now());
+    timerRef.current = setTimeout(tick, initialDelay);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -67,11 +73,11 @@ export default function ExerciseCountdown({
   }, []);
 
   return (
-    <div className="bg-surface rounded-xl border border-border p-8 flex flex-col items-center justify-center min-h-[200px]">
-      <p className="text-xs text-muted uppercase tracking-wide mb-4">
-        Get Ready
+    <div className="bg-surface rounded-xl border border-border p-8 flex flex-col items-center justify-center min-h-[200px] shadow-sm">
+      <p className="font-hand text-2xl text-muted mb-2">
+        Get ready…
       </p>
-      <div className="text-6xl font-bold text-primary tabular-nums mb-6">
+      <div className="font-serif text-7xl font-semibold text-primary tabular-nums mb-6">
         {currentBeat}
       </div>
       <div className="flex gap-3">
