@@ -10,7 +10,7 @@ This document is the source of truth — when code and this document disagree, u
 
 1. **Texture over gradient.** A tiny paper-grain overlay reads warmer than any linear-gradient().
 2. **Material, not abstraction.** Components reference real banjo parts: _head_, _fret_, _pot_, _string_, _tailpiece_.
-3. **Typography carries the tone.** Fraunces (with SOFT + WONK axes active) does the hand-lettered work — stop reaching for a script font.
+3. **Typography carries the tone.** Lora (with SOFT + WONK axes active) does the hand-lettered work — stop reaching for a script font.
 4. **Limit color saturation.** Colors come from nature and metal, not the SaaS rainbow. Prefer the warm ramp over Tailwind's stock slate/blue/purple/green.
 5. **Motion settles, never springs.** The ease curve is an old door hinge, not a trampoline.
 
@@ -86,13 +86,13 @@ This keeps the whole app in-palette in both modes — the current stock Tailwind
 
 ## Typography
 
-**Keep the current stack.** Fraunces is doing a lot of work here — its SOFT and WONK axes (already enabled in `layout.tsx:16`) give hand-lettered wobble without pulling in a scriptface. Nunito's rounded terminals pair warmly with it. Caveat earns its keep as punctuation — tags, call-out labels, margin notes.
+**Keep the current stack.** Lora is doing a lot of work here — a warm, book-style serif with a soft calligraphic italic. Nunito's rounded terminals pair warmly with it. Caveat earns its keep as punctuation — tags, call-out labels, margin notes.
 
 ### Stack
 | Role | Font | Weight(s) | Tailwind var | Use for |
 |---|---|---|---|---|
-| Display / H1 | **Fraunces** (opsz 48, SOFT 100, WONK 1) | 600 / 700 | `--font-serif` | Page titles, hero headings |
-| Heading / H2-H4 | **Fraunces** (opsz 24) | 500 / 600 | `--font-serif` | Section headings |
+| Display / H1 | **Lora** | 600 / 700 | `--font-serif` | Page titles, hero headings |
+| Heading / H2-H4 | **Lora** | 500 / 600 | `--font-serif` | Section headings |
 | Body | **Nunito** | 400 / 500 / 600 | `--font-sans` | Paragraphs, labels, nav |
 | Hand / Accent | **Caveat** | 500 / 700 | `--font-hand` | Badges, quotes, "NEW" tags, tool-tip flavor text |
 | Mono | **Geist Mono** | 400 / 600 | `--font-mono` | Chord names, fret numbers, tab notation |
@@ -101,7 +101,7 @@ This keeps the whole app in-palette in both modes — the current stock Tailwind
 
 ```ts
 // src/app/layout.tsx — reference only, currently correct
-Fraunces({ variable: "--font-fraunces", axes: ["SOFT", "WONK", "opsz"], subsets: ["latin"] })
+Lora({ variable: "--font-lora", subsets: ["latin"] })
 Nunito({ variable: "--font-nunito", subsets: ["latin"] })
 Caveat({ variable: "--font-caveat", subsets: ["latin"] })
 Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
@@ -120,10 +120,10 @@ Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
 | `font-hand text-3xl` | 30 / 36 | Hero flourish, onboarding |
 
 ### Usage rules
-- **Never mix Fraunces and Caveat in the same line.** Caveat is an accent — one word, a label, a badge. Fraunces carries the weight.
+- **Never mix Lora and Caveat in the same line.** Caveat is an accent — one word, a label, a badge. Lora carries the weight.
 - **Body text stays Nunito** — do not set serif on paragraphs, it tires the eye.
 - **Numbers in chord diagrams and tabs = Geist Mono**, tabular nums enabled: `font-mono tabular-nums`.
-- **Caveat is not a body font.** If you find yourself using it on a sentence longer than ~6 words, switch to Fraunces italic.
+- **Caveat is not a body font.** If you find yourself using it on a sentence longer than ~6 words, switch to Lora italic.
 
 ---
 
@@ -404,7 +404,7 @@ Slides in with a settle, paper-card body, optional torn edge.
 - **Badge / Pill**: `px-2 py-0.5 rounded-full text-[10px] font-medium` + one of the palette pairs above. Don't exceed 10 characters inside.
 - **Tab nav** (for Tuner/Metronome tool tabs): underline-style, active tab has 2px bottom border in `--primary` that slides between tabs on `240ms`.
 - **Fretboard diagram**: bone/catgut fills (`--catgut`), brass fret lines (`--brass`), walnut fingerboard fill (`--mahogany` at 15% opacity over surface). Position markers (3/5/7/9/12) in Caveat at small size.
-- **Empty state**: Fraunces H3 + Nunito sub + a small hand-drawn SVG (not a stock illustration). Think _marginalia_, not _mascot_.
+- **Empty state**: Lora H3 + Nunito sub + a small hand-drawn SVG (not a stock illustration). Think _marginalia_, not _mascot_.
 
 ---
 
@@ -437,7 +437,7 @@ The dark ramp already inverts correctly. Watch out for:
 ## Checklist before shipping a new screen
 
 - [ ] All colors come from palette tokens — grep for `bg-blue`, `bg-slate`, `text-gray`, fail the check.
-- [ ] Fraunces used for every heading ≥ `text-lg`.
+- [ ] Lora used for every heading ≥ `text-lg`.
 - [ ] No emojis as icons — SVG only.
 - [ ] Every interactive element has `cursor-pointer` and `:focus-visible`.
 - [ ] `transition-*` utilities paired with `duration-[240ms]` and the `--ease-warm` timing function.
