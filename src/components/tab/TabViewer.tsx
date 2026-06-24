@@ -84,7 +84,7 @@ export default function TabViewer({
   return (
     <div
       ref={scrollRef}
-      className="overflow-x-auto rounded-lg"
+      className="overflow-x-auto rounded-lg tab-scroll-container"
       style={{
         border: '1px solid var(--border, #d6cfc7)',
         background: 'var(--surface, #ffffff)',

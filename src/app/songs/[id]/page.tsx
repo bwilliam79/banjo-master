@@ -83,7 +83,7 @@ export default function SongDetailPage() {
           <button
             type="button"
             onClick={() => router.push('/songs')}
-            className="flex items-center gap-1 text-sm text-muted hover:text-foreground transition mb-6"
+            className="flex items-center gap-1 text-sm text-muted hover:text-foreground transition mb-6 print:hidden"
           >
             <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -104,7 +104,7 @@ export default function SongDetailPage() {
 
   return (
     <div className="min-h-screen bg-background print:bg-white">
-      <div className="max-w-4xl mx-auto px-4 py-6 print:px-8 print:py-4">
+      <div className="max-w-4xl mx-auto px-4 py-6 print:px-0 print:py-0">
         {/* Back button */}
         <button
           type="button"
@@ -117,11 +117,11 @@ export default function SongDetailPage() {
           Back to Songs
         </button>
 
-        {/* Song header */}
-        <div className="bg-surface rounded-xl p-5 border border-border mb-6 print:bg-white print:border print:shadow-none">
+        {/* Song header - made print-clean */}
+        <div className="bg-surface rounded-xl p-5 border border-border mb-6 print:bg-white print:border-0 print:shadow-none print-song-header print:mb-4">
           <div className="flex items-start justify-between gap-3 mb-3">
-            <div>
-              <h1 className="text-2xl font-bold text-foreground print:text-black">{song.title}</h1>
+            <div className="min-w-0">
+              <h1 className="text-2xl font-bold text-foreground print:text-black print:text-3xl leading-tight">{song.title}</h1>
               <p className="text-muted mt-0.5 print:text-gray-700">{song.artist}</p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -151,7 +151,7 @@ export default function SongDetailPage() {
             </span>
           </div>
 
-          {/* Progressive Arrangement Selector */}
+          {/* Progressive Arrangement Selector - hidden in print */}
           {arrangements.length > 1 && (
             <div className="mb-4 print:hidden">
               <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-2">
@@ -187,8 +187,8 @@ export default function SongDetailPage() {
         </div>
 
         {/* Tablature */}
-        <div className="bg-surface rounded-xl p-5 border border-border print:bg-white print:border print:p-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="bg-surface rounded-xl p-5 border border-border print:bg-white print:border print:p-2 print:mb-3">
+          <div className="flex items-center justify-between mb-4 print:mb-2">
             <h2 className="text-lg font-bold text-foreground print:text-black">Tablature</h2>
             <div className="flex items-center gap-3">
               {arrangements.length > 0 && (
@@ -218,14 +218,14 @@ export default function SongDetailPage() {
 
         {/* Level description */}
         {arrangements.length > 0 && (
-          <div className="mt-4 text-sm text-muted print:text-gray-700">
+          <div className="mt-4 text-sm text-muted print:text-gray-700 print-description">
             {arrangements.find(a => a.level === currentLevel)?.description || 
              `This is the ${LEVEL_LABELS[currentLevel].toLowerCase()} arrangement.`}
           </div>
         )}
 
-        {/* Print hint */}
-        <div className="mt-8 text-xs text-muted hidden print:block">
+        {/* Print footer */}
+        <div className="mt-8 text-xs text-muted hidden print:block print-footer">
           Printed from Banjo Master • Open G tuning (gDGBD)
         </div>
       </div>

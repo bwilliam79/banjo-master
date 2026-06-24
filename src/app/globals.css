@@ -135,27 +135,36 @@ h1, h2, h3, h4, h5, h6 {
    Print styles for songs & tabs
    ========================= */
 @media print {
-  /* Hide interactive UI */
+  /* Hide all app UI chrome (Header, Sidebar, BottomNav, buttons, etc.) */
+  header,
+  .sticky,
+  nav,
+  aside,
   button,
   .print\:hidden,
-  nav,
   .no-print {
     display: none !important;
+  }
+
+  @page {
+    margin: 0.65in;
+    size: letter portrait;
   }
 
   body {
     background: white !important;
     color: black !important;
-    font-size: 11pt;
-    line-height: 1.4;
+    font-size: 10.5pt;
+    line-height: 1.3;
   }
 
-  /* Clean paper surfaces */
+  /* Kill decorative card styling in print */
   .bg-surface,
   .border,
-  .rounded-xl {
+  .rounded-xl,
+  .rounded-lg {
     background: white !important;
-    border: 1px solid #aaa !important;
+    border: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
   }
@@ -164,14 +173,44 @@ h1, h2, h3, h4, h5, h6 {
     color: black !important;
   }
 
-  /* Larger, crisp tablature on paper */
-  svg {
-    max-width: 100% !important;
-    height: auto !important;
+  /* Clean song header for print */
+  .print-song-header {
+    border-bottom: 1.5px solid #222;
+    padding-bottom: 6px;
+    margin-bottom: 12px !important;
   }
 
-  .bg-surface.rounded-xl {
-    padding: 10px !important;
-    margin-bottom: 8px;
+  /* === Tab container fixes === */
+  /* Remove scroll container funkiness and the thin black bar */
+  .tab-scroll-container,
+  div[style*="overflow-x-auto"],
+  div[style*="border: 1px solid"] {
+    overflow: visible !important;
+    border: 1px solid #333 !important;
+    background: white !important;
+    border-radius: 0 !important;
+    margin: 0;
+    padding: 4px 0;
+  }
+
+  svg {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  .print-description {
+    font-size: 9.5pt;
+    color: #555 !important;
+  }
+
+  /* Make the footer subtle */
+  .print-footer {
+    font-size: 8pt;
+    color: #666;
+    margin-top: 16px;
+    border-top: 1px solid #ddd;
+    padding-top: 4px;
   }
 }
