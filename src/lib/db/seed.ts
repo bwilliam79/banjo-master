@@ -6,6 +6,7 @@ import type { Chord } from '@/types/chord';
 import type { Song } from '@/types/song';
 import type { Lesson } from '@/types/lesson';
 import type { UserProgress } from '@/types/practice';
+import { migrateLegacySong } from '@/lib/songs/arrangements';
 
 export async function seedDatabase() {
   const chordCount = await db.chords.count();
@@ -15,7 +16,9 @@ export async function seedDatabase() {
 
   const songCount = await db.songs.count();
   if (songCount === 0) {
-    await db.songs.bulkAdd(songData as Song[]);
+    // Migrate legacy song data on first seed
+    const migratedSongs = (songData as any[]).map(migrateLegacySong);
+    await db.songs.bulkAdd(migratedSongs as Song[]);
   }
 
   const lessonCount = await db.lessons.count();
