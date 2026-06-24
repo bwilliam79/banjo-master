@@ -1,6 +1,7 @@
 import type { UserProgress } from '@/types/practice';
 import type { Song } from '@/types/song';
 import type { IconName } from '@/components/ui/TypeIcon';
+import { getSongDifficulty } from '@/lib/songs/arrangements';
 
 export interface Recommendation {
   id: string;
@@ -123,8 +124,8 @@ export function generateRecommendations(
   // 5. Recommend songs that match current difficulty level
   const currentDifficulty = difficultyFromLessons(completedLessons.length);
   const matchingSongs = songs
-    .filter((s) => s.difficulty <= currentDifficulty)
-    .sort((a, b) => b.difficulty - a.difficulty)
+    .filter((s) => getSongDifficulty(s) <= currentDifficulty)
+    .sort((a, b) => getSongDifficulty(b) - getSongDifficulty(a))
     .slice(0, 3);
 
   for (const song of matchingSongs) {
@@ -132,8 +133,8 @@ export function generateRecommendations(
       id: `rec-song-${song.id}`,
       type: 'song',
       title: `Play: ${song.title}`,
-      description: `${song.artist} -- ${song.genre} (Difficulty ${song.difficulty}/5). A great match for your current level.`,
-      priority: 50 + song.difficulty * 5,
+      description: `${song.artist} -- ${song.genre} (Difficulty ${getSongDifficulty(song)}/5). A great match for your current level.`,
+      priority: 50 + getSongDifficulty(song) * 5,
       link: `/songs/${song.id}`,
       icon: 'music-note',
     });
@@ -141,7 +142,7 @@ export function generateRecommendations(
 
   // 6. Suggest chord practice for chords used in upcoming songs
   const upcomingSongs = songs
-    .filter((s) => s.difficulty === currentDifficulty || s.difficulty === currentDifficulty + 1)
+    .filter((s) => getSongDifficulty(s) === currentDifficulty || getSongDifficulty(s) === currentDifficulty + 1)
     .slice(0, 5);
   const chordsToLearn = new Set<string>();
   for (const song of upcomingSongs) {
