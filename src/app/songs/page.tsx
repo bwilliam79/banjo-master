@@ -69,6 +69,202 @@ export default function SongsPage() {
     return true;
   });
 
+  // Demo: Load songs with explicit Beginner + Intermediate + Advanced arrangements
+  // This makes the level switcher visible immediately (the main new feature).
+  async function loadProgressiveDemo() {
+    await db.songs.clear();
+
+    const demoSongs: Song[] = [
+      {
+        id: 'demo-reuben',
+        title: 'Reuben (Progressive Demo)',
+        artist: 'Traditional',
+        genre: 'Old-Time',
+        style: 'three-finger',
+        duration: 95,
+        difficulty: 3,
+        chordsUsed: ['G', 'C', 'D'],
+        tags: ['classic', 'demo'],
+        arrangements: [
+          {
+            id: 'arr-reuben-1',
+            level: 1,
+            label: 'Beginner',
+            description: 'Simple melody, open strings, steady quarter notes',
+            tab: {
+              id: 'tab-reuben-1',
+              title: 'Reuben - Beginner',
+              tuning: ['G', 'D', 'G', 'B', 'D'],
+              tempo: 100,
+              measures: [
+                {
+                  timeSignature: [4, 4],
+                  notes: [
+                    { string: 3, fret: 0, duration: 0.5, offset: 0 },
+                    { string: 2, fret: 0, duration: 0.5, offset: 0.5 },
+                    { string: 1, fret: 0, duration: 0.5, offset: 1 },
+                    { string: 5, fret: 0, duration: 0.5, offset: 1.5 },
+                    { string: 3, fret: 0, duration: 0.5, offset: 2 },
+                    { string: 2, fret: 0, duration: 0.5, offset: 2.5 },
+                    { string: 1, fret: 0, duration: 0.5, offset: 3 },
+                    { string: 5, fret: 0, duration: 0.5, offset: 3.5 },
+                  ],
+                },
+              ],
+            },
+          },
+          {
+            id: 'arr-reuben-2',
+            level: 2,
+            label: 'Intermediate',
+            description: 'Adds hammer-ons, slight syncopation, rolls',
+            tab: {
+              id: 'tab-reuben-2',
+              title: 'Reuben - Intermediate',
+              tuning: ['G', 'D', 'G', 'B', 'D'],
+              tempo: 110,
+              measures: [
+                {
+                  timeSignature: [4, 4],
+                  notes: [
+                    { string: 3, fret: 0, duration: 0.5, offset: 0 },
+                    { string: 2, fret: 0, duration: 0.5, offset: 0.5 },
+                    { string: 1, fret: 0, duration: 0.25, offset: 1, technique: 'hammer-on' },
+                    { string: 5, fret: 0, duration: 0.25, offset: 1.25 },
+                    { string: 3, fret: 0, duration: 0.5, offset: 2 },
+                    { string: 2, fret: 0, duration: 0.5, offset: 2.5 },
+                    { string: 1, fret: 2, duration: 0.5, offset: 3 },
+                    { string: 5, fret: 0, duration: 0.5, offset: 3.5 },
+                  ],
+                },
+              ],
+            },
+          },
+          {
+            id: 'arr-reuben-3',
+            level: 3,
+            label: 'Advanced',
+            description: 'Full rolls, syncopation, melodic variations',
+            tab: {
+              id: 'tab-reuben-3',
+              title: 'Reuben - Advanced',
+              tuning: ['G', 'D', 'G', 'B', 'D'],
+              tempo: 125,
+              measures: [
+                {
+                  timeSignature: [4, 4],
+                  notes: [
+                    { string: 3, fret: 0, duration: 0.25, offset: 0 },
+                    { string: 2, fret: 0, duration: 0.25, offset: 0.25 },
+                    { string: 1, fret: 0, duration: 0.25, offset: 0.5 },
+                    { string: 5, fret: 0, duration: 0.25, offset: 0.75 },
+                    { string: 3, fret: 2, duration: 0.25, offset: 1, technique: 'hammer-on' },
+                    { string: 2, fret: 1, duration: 0.25, offset: 1.25 },
+                    { string: 1, fret: 0, duration: 0.5, offset: 2 },
+                    { string: 5, fret: 0, duration: 0.5, offset: 3 },
+                  ],
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'demo-cripple-advanced',
+        title: 'Cripple Creek (with levels)',
+        artist: 'Traditional',
+        genre: 'Bluegrass',
+        style: 'three-finger',
+        duration: 120,
+        difficulty: 4,
+        chordsUsed: ['G', 'C', 'D'],
+        tags: ['demo'],
+        arrangements: [
+          {
+            id: 'arr-cc-1',
+            level: 1,
+            label: 'Beginner',
+            description: 'Basic melody only',
+            tab: {
+              id: 'tab-cc-1',
+              title: 'Cripple Creek - Beginner',
+              tuning: ['G', 'D', 'G', 'B', 'D'],
+              tempo: 110,
+              measures: [
+                {
+                  timeSignature: [4, 4],
+                  notes: [
+                    { string: 3, fret: 0, duration: 0.5, offset: 0 },
+                    { string: 2, fret: 1, duration: 0.5, offset: 0.5 },
+                    { string: 5, fret: 0, duration: 0.5, offset: 1 },
+                    { string: 1, fret: 0, duration: 0.5, offset: 1.5 },
+                  ],
+                },
+              ],
+            },
+          },
+          {
+            id: 'arr-cc-3',
+            level: 3,
+            label: 'Advanced',
+            description: 'Full rolls + syncopation from the original data',
+            tab: (songs?.find(s => s.id === 'cripple-creek')?.tab) || {
+              id: 'tab-cc-3',
+              title: 'Cripple Creek - Advanced',
+              tuning: ['G', 'D', 'G', 'B', 'D'],
+              tempo: 120,
+              measures: [
+                { timeSignature: [4, 4], notes: [{ string: 3, fret: 0, duration: 0.5, offset: 0 }] },
+              ],
+            },
+          },
+        ],
+      },
+    ];
+
+    await db.songs.bulkAdd(demoSongs);
+    // Force refresh of the live query
+    window.location.reload();
+  }
+
+  // Very basic client-side Grok URL import (uses the skeleton)
+  // For real generation, paste a YouTube/Spotify link and it will create a Beginner tab.
+  async function handleUrlImport() {
+    const url = prompt('Paste YouTube or Spotify link for a Beginner (Level 1) arrangement:');
+    if (!url) return;
+
+    try {
+      const { generateTabFromUrl } = await import('@/lib/ai/grokTabGenerator');
+      const result = await generateTabFromUrl({ url, targetLevel: 1 });
+
+      const newSong: Song = {
+        id: `imported-${Date.now()}`,
+        title: result.tab.title || 'Imported from URL',
+        artist: 'Generated via Grok',
+        genre: 'Bluegrass',
+        style: 'three-finger',
+        duration: 90,
+        difficulty: 2,
+        chordsUsed: result.suggestedChords || [],
+        tags: ['imported', 'grok'],
+        arrangements: [
+          {
+            id: `arr-import-${Date.now()}`,
+            level: 1,
+            label: 'Beginner',
+            description: result.notes || 'Generated from URL (Beginner level)',
+            tab: result.tab,
+          },
+        ],
+      };
+
+      await db.songs.add(newSong);
+      alert(`Added "${newSong.title}" as Beginner level. Open it from the list to see the tab.`);
+    } catch (e: any) {
+      alert('Import failed: ' + (e?.message || e));
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto px-4 py-6">
@@ -141,6 +337,12 @@ export default function SongsPage() {
               />
             ))}
           </div>
+        </div>
+        {/* New demo actions for progressive levels + Grok import */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          <button type="button" onClick={loadProgressiveDemo} className="px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-600 text-white hover:bg-emerald-700 transition">Load Progressive Demo Songs</button>
+          <button type="button" onClick={handleUrlImport} className="px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-hover text-foreground border border-border hover:bg-border transition">Import from URL (Grok)</button>
+          <span className="text-xs text-muted self-center ml-2">Click "Load Progressive Demo Songs" to see the level switcher</span>
         </div>
 
         {/* Song List */}
