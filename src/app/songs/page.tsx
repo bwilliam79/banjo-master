@@ -236,6 +236,19 @@ export default function SongsPage() {
     }
   }
 
+  async function deleteSong(songId: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    if (!confirm('Delete this song from your catalogue? This cannot be undone.')) {
+      return;
+    }
+    try {
+      await db.songs.delete(songId);
+      // Dexie live query will automatically refresh the list
+    } catch (e: any) {
+      alert('Failed to delete song: ' + (e?.message || e));
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto px-4 py-6">
@@ -344,25 +357,44 @@ export default function SongsPage() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {filteredSongs.map((song) => {
               const displayDifficulty = getSongDifficulty(song);
+              const hasMultipleLevels = (song.arrangements?.length || 0) > 1;
+
               return (
-                <button
+                <div
                   key={song.id}
-                  type="button"
                   onClick={() => router.push(`/songs/${song.id}`)}
-                  className="bg-surface rounded-xl p-4 border border-border text-left transition hover:bg-surface-hover hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="group bg-surface rounded-xl p-4 border border-border text-left transition hover:bg-surface-hover hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 cursor-pointer"
                 >
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div className="min-w-0">
-                      <h3 className="font-semibold text-foreground truncate">{song.title}</h3>
+                      <h3 className="font-semibold text-foreground truncate group-hover:underline">{song.title}</h3>
                       <p className="text-sm text-muted truncate">{song.artist}</p>
                     </div>
-                    <span className="text-xs text-muted tabular-nums shrink-0">
-                      {formatDuration(song.duration)}
-                    </span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="text-xs text-muted tabular-nums">
+                        {formatDuration(song.duration)}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={(e) => deleteSong(song.id, e)}
+                        className="p-1 text-muted hover:text-danger transition rounded"
+                        title="Delete song"
+                        aria-label={`Delete ${song.title}`}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.595-1.858L5 7m5 4v6m4-6v6m1-10V9a1 1 0 00-1-1h-4a1 1 0 00-1 1v1M5 7h14" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
                   <div className="flex items-center gap-2 mb-2">
                     <StarRating rating={displayDifficulty} max={5} size="sm" />
+                    {hasMultipleLevels && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 font-medium">
+                        3 levels
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex flex-wrap gap-1.5">
@@ -373,7 +405,7 @@ export default function SongsPage() {
                       {song.genre}
                     </span>
                   </div>
-                </button>
+                </div>
               );
             })}
           </div>

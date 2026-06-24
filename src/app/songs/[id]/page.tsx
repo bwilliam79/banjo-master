@@ -52,6 +52,22 @@ export default function SongDetailPage() {
     [id],
   );
 
+  const handleDelete = async () => {
+    if (!song) return;
+    if (!confirm(`Delete "${song.title}"? This cannot be undone.`)) return;
+
+    try {
+      await db.songs.delete(song.id);
+      router.push('/songs');
+    } catch (e: any) {
+      alert('Failed to delete song: ' + (e?.message || e));
+    }
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   if (song === undefined) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -87,13 +103,13 @@ export default function SongDetailPage() {
   const displayDifficulty = getSongDifficulty(song);
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-4 py-6">
+    <div className="min-h-screen bg-background print:bg-white">
+      <div className="max-w-4xl mx-auto px-4 py-6 print:px-8 print:py-4">
         {/* Back button */}
         <button
           type="button"
           onClick={() => router.push('/songs')}
-          className="flex items-center gap-1 text-sm text-muted hover:text-foreground transition mb-6"
+          className="flex items-center gap-1 text-sm text-muted hover:text-foreground transition mb-6 print:hidden"
         >
           <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
             <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -102,15 +118,24 @@ export default function SongDetailPage() {
         </button>
 
         {/* Song header */}
-        <div className="bg-surface rounded-xl p-5 border border-border mb-6">
+        <div className="bg-surface rounded-xl p-5 border border-border mb-6 print:bg-white print:border print:shadow-none">
           <div className="flex items-start justify-between gap-3 mb-3">
             <div>
-              <h1 className="text-2xl font-bold text-foreground">{song.title}</h1>
-              <p className="text-muted mt-0.5">{song.artist}</p>
+              <h1 className="text-2xl font-bold text-foreground print:text-black">{song.title}</h1>
+              <p className="text-muted mt-0.5 print:text-gray-700">{song.artist}</p>
             </div>
-            <span className="text-sm text-muted tabular-nums shrink-0">
-              {formatDuration(song.duration)}
-            </span>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="text-sm text-muted tabular-nums print:text-gray-600">
+                {formatDuration(song.duration)}
+              </span>
+              <button
+                type="button"
+                onClick={handleDelete}
+                className="text-sm px-3 py-1 rounded-full border border-border text-muted hover:text-danger hover:border-danger transition print:hidden"
+              >
+                Delete
+              </button>
+            </div>
           </div>
 
           <div className="flex items-center gap-2 mb-3">
@@ -118,17 +143,17 @@ export default function SongDetailPage() {
           </div>
 
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="text-xs px-2.5 py-1 bg-primary/10 text-primary rounded-full font-medium">
+            <span className="text-xs px-2.5 py-1 bg-primary/10 text-primary rounded-full font-medium print:bg-gray-100 print:text-black">
               {STYLE_LABELS[song.style]}
             </span>
-            <span className="text-xs px-2.5 py-1 bg-surface-hover text-muted rounded-full">
+            <span className="text-xs px-2.5 py-1 bg-surface-hover text-muted rounded-full print:bg-gray-100 print:text-black">
               {song.genre}
             </span>
           </div>
 
           {/* Progressive Arrangement Selector */}
           {arrangements.length > 1 && (
-            <div className="mb-4">
+            <div className="mb-4 print:hidden">
               <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-2">
                 Difficulty Level
               </h3>
@@ -153,59 +178,35 @@ export default function SongDetailPage() {
                       }`}
                     >
                       {LEVEL_LABELS[level]}
-                      {arr?.description && <span className="ml-1 opacity-70 text-xs">({arr.description})</span>}
                     </button>
                   );
                 })}
               </div>
             </div>
           )}
-
-          {/* Chords used */}
-          {song.chordsUsed.length > 0 && (
-            <div>
-              <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5">
-                Chords Used
-              </h3>
-              <div className="flex flex-wrap gap-1.5">
-                {song.chordsUsed.map((chord) => (
-                  <span
-                    key={chord}
-                    className="text-sm px-2.5 py-0.5 bg-surface-hover text-foreground rounded-full border border-border font-medium"
-                  >
-                    {chord}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Tags */}
-          {song.tags.length > 0 && (
-            <div className="mt-3">
-              <div className="flex flex-wrap gap-1.5">
-                {song.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-0.5 bg-surface-hover rounded-full text-muted"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Tablature */}
-        <div className="bg-surface rounded-xl p-5 border border-border">
+        <div className="bg-surface rounded-xl p-5 border border-border print:bg-white print:border print:p-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold text-foreground">Tablature</h2>
-            {arrangements.length > 0 && (
-              <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
-                {LEVEL_LABELS[currentLevel]}
-              </span>
-            )}
+            <h2 className="text-lg font-bold text-foreground print:text-black">Tablature</h2>
+            <div className="flex items-center gap-3">
+              {arrangements.length > 0 && (
+                <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium print:bg-gray-100 print:text-black print:border">
+                  {LEVEL_LABELS[currentLevel]}
+                </span>
+              )}
+              <button
+                type="button"
+                onClick={handlePrint}
+                className="px-3 py-1 text-sm rounded-full border border-border text-foreground hover:bg-surface-hover transition flex items-center gap-1.5 print:hidden"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                Print
+              </button>
+            </div>
           </div>
 
           {currentTab ? (
@@ -217,11 +218,16 @@ export default function SongDetailPage() {
 
         {/* Level description */}
         {arrangements.length > 0 && (
-          <div className="mt-4 text-sm text-muted">
+          <div className="mt-4 text-sm text-muted print:text-gray-700">
             {arrangements.find(a => a.level === currentLevel)?.description || 
              `This is the ${LEVEL_LABELS[currentLevel].toLowerCase()} arrangement.`}
           </div>
         )}
+
+        {/* Print hint */}
+        <div className="mt-8 text-xs text-muted hidden print:block">
+          Printed from Banjo Master • Open G tuning (gDGBD)
+        </div>
       </div>
     </div>
   );
