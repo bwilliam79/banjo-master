@@ -1,12 +1,15 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db/schema';
 import { seedDatabase } from '@/lib/db/seed';
 import StarRating from '@/components/ui/StarRating';
 import TabViewer from '@/components/tab/TabViewer';
+import { getArrangements, getTabForLevel, getSongDifficulty } from '@/lib/songs/arrangements';
+import ArrangementSwitcher from '@/components/tab/ArrangementSwitcher';
+import type { Song } from '@/types/song';
 
 const STYLE_LABELS: Record<string, string> = {
   'three-finger': 'Three-Finger',
@@ -21,10 +24,24 @@ function formatDuration(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
+const LEVEL_LABELS: Record<1 | 2 | 3, string> = {
+  1: 'Beginner',
+  2: 'Intermediate',
+  3: 'Advanced',
+};
+
+const LEVEL_COLORS: Record<1 | 2 | 3, string> = {
+  1: 'bg-emerald-600 text-white',
+  2: 'bg-amber-600 text-white',
+  3: 'bg-red-600 text-white',
+};
+
 export default function SongDetailPage() {
   const params = useParams();
   const router = useRouter();
   const id = params.id as string;
+
+  const [currentLevel, setCurrentLevel] = useState<1 | 2 | 3>(1);
 
   useEffect(() => {
     seedDatabase();
@@ -65,6 +82,10 @@ export default function SongDetailPage() {
     );
   }
 
+  const arrangements = getArrangements(song);
+  const currentTab = getTabForLevel(song, currentLevel) || getArrangements(song)[0]?.tab;
+  const displayDifficulty = getSongDifficulty(song);
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-6">
@@ -93,7 +114,7 @@ export default function SongDetailPage() {
           </div>
 
           <div className="flex items-center gap-2 mb-3">
-            <StarRating rating={song.difficulty} max={5} size="md" />
+            <StarRating rating={displayDifficulty} max={5} size="md" />
           </div>
 
           <div className="flex flex-wrap gap-2 mb-4">
@@ -104,6 +125,41 @@ export default function SongDetailPage() {
               {song.genre}
             </span>
           </div>
+
+          {/* Progressive Arrangement Selector */}
+          {arrangements.length > 1 && (
+            <div className="mb-4">
+              <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-2">
+                Difficulty Level
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {([1, 2, 3] as const).map((level) => {
+                  const arr = arrangements.find(a => a.level === level);
+                  const isActive = currentLevel === level;
+                  const isAvailable = !!arr;
+
+                  return (
+                    <button
+                      key={level}
+                      type="button"
+                      disabled={!isAvailable}
+                      onClick={() => setCurrentLevel(level)}
+                      className={`px-4 py-1.5 rounded-full text-sm font-medium transition border ${
+                        isActive 
+                          ? LEVEL_COLORS[level] + ' border-transparent' 
+                          : isAvailable 
+                            ? 'bg-surface-hover text-foreground border-border hover:bg-border' 
+                            : 'bg-surface text-muted border-border opacity-50 cursor-not-allowed'
+                      }`}
+                    >
+                      {LEVEL_LABELS[level]}
+                      {arr?.description && <span className="ml-1 opacity-70 text-xs">({arr.description})</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Chords used */}
           {song.chordsUsed.length > 0 && (
@@ -143,9 +199,29 @@ export default function SongDetailPage() {
 
         {/* Tablature */}
         <div className="bg-surface rounded-xl p-5 border border-border">
-          <h2 className="text-lg font-bold text-foreground mb-4">Tablature</h2>
-          <TabViewer tab={song.tab} />
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-foreground">Tablature</h2>
+            {arrangements.length > 0 && (
+              <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                {LEVEL_LABELS[currentLevel]}
+              </span>
+            )}
+          </div>
+
+          {currentTab ? (
+            <TabViewer tab={currentTab} />
+          ) : (
+            <div className="text-muted text-sm">No tablature available for this level yet.</div>
+          )}
         </div>
+
+        {/* Level description */}
+        {arrangements.length > 0 && (
+          <div className="mt-4 text-sm text-muted">
+            {arrangements.find(a => a.level === currentLevel)?.description || 
+             `This is the ${LEVEL_LABELS[currentLevel].toLowerCase()} arrangement.`}
+          </div>
+        )}
       </div>
     </div>
   );

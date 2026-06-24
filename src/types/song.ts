@@ -20,15 +20,26 @@ export interface Tab {
   capo?: number;
 }
 
+// New: Progressive difficulty arrangements
+export interface Arrangement {
+  id: string;
+  level: 1 | 2 | 3;           // 1 = Beginner, 2 = Intermediate, 3 = Advanced
+  label: string;              // "Beginner", "Intermediate", "Advanced"
+  tab: Tab;
+  description?: string;       // short learning notes for this level
+}
+
 export interface Song {
   id: string;
   title: string;
   artist: string;
   genre: string;
-  difficulty: 1 | 2 | 3 | 4 | 5;
   style: 'three-finger' | 'clawhammer' | 'melodic' | 'single-string';
-  tab: Tab;
+  arrangements: Arrangement[];   // Replaces the old single `tab`
   chordsUsed: string[];
   duration: number;
   tags: string[];
+  // Legacy fields kept temporarily for migration
+  difficulty?: 1 | 2 | 3 | 4 | 5;
+  tab?: Tab;
 }

@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { db } from '@/lib/db/schema';
 import { seedDatabase } from '@/lib/db/seed';
 import type { Song } from '@/types/song';
+import { getSongDifficulty } from '@/lib/songs/arrangements';
 import StarRating from '@/components/ui/StarRating';
 
 const STYLES: Song['style'][] = ['three-finger', 'clawhammer', 'melodic', 'single-string'];
@@ -61,7 +62,8 @@ export default function SongsPage() {
   const songs = useLiveQuery(() => db.songs.toArray(), []);
 
   const filteredSongs = (songs ?? []).filter((song) => {
-    if (selectedDifficulty && song.difficulty !== selectedDifficulty) return false;
+    const songDifficulty = getSongDifficulty(song);
+    if (selectedDifficulty && songDifficulty !== selectedDifficulty) return false;
     if (selectedStyle && song.style !== selectedStyle) return false;
     if (selectedGenre && song.genre !== selectedGenre) return false;
     return true;
@@ -152,37 +154,40 @@ export default function SongsPage() {
           </div>
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredSongs.map((song) => (
-              <button
-                key={song.id}
-                type="button"
-                onClick={() => router.push(`/songs/${song.id}`)}
-                className="bg-surface rounded-xl p-4 border border-border text-left transition hover:bg-surface-hover hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-              >
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-foreground truncate">{song.title}</h3>
-                    <p className="text-sm text-muted truncate">{song.artist}</p>
+            {filteredSongs.map((song) => {
+              const displayDifficulty = getSongDifficulty(song);
+              return (
+                <button
+                  key={song.id}
+                  type="button"
+                  onClick={() => router.push(`/songs/${song.id}`)}
+                  className="bg-surface rounded-xl p-4 border border-border text-left transition hover:bg-surface-hover hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-foreground truncate">{song.title}</h3>
+                      <p className="text-sm text-muted truncate">{song.artist}</p>
+                    </div>
+                    <span className="text-xs text-muted tabular-nums shrink-0">
+                      {formatDuration(song.duration)}
+                    </span>
                   </div>
-                  <span className="text-xs text-muted tabular-nums shrink-0">
-                    {formatDuration(song.duration)}
-                  </span>
-                </div>
 
-                <div className="flex items-center gap-2 mb-2">
-                  <StarRating rating={song.difficulty} max={5} size="sm" />
-                </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <StarRating rating={displayDifficulty} max={5} size="sm" />
+                  </div>
 
-                <div className="flex flex-wrap gap-1.5">
-                  <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full font-medium">
-                    {STYLE_LABELS[song.style]}
-                  </span>
-                  <span className="text-xs px-2 py-0.5 bg-surface-hover text-muted rounded-full">
-                    {song.genre}
-                  </span>
-                </div>
-              </button>
-            ))}
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full font-medium">
+                      {STYLE_LABELS[song.style]}
+                    </span>
+                    <span className="text-xs px-2 py-0.5 bg-surface-hover text-muted rounded-full">
+                      {song.genre}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
