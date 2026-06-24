@@ -12,6 +12,11 @@ services:
       - DATA_DIR=/data
     volumes:
       - ./data:/data
+    labels:
+      - "dashboard.name=Banjo Master"
+      - "dashboard.description=5-String Banjo Tabs, Arrangements & Practice"
+      - "dashboard.icon=music"
+      - "dashboard.category=apps"
 
   cert-gen:
     image: alpine:latest
