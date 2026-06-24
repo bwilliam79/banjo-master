@@ -8,6 +8,7 @@ import { seedDatabase } from '@/lib/db/seed';
 import type { Song } from '@/types/song';
 import { getSongDifficulty } from '@/lib/songs/arrangements';
 import StarRating from '@/components/ui/StarRating';
+import ImportFromLinkModal from '@/components/import/ImportFromLinkModal';
 
 const STYLES: Song['style'][] = ['three-finger', 'clawhammer', 'melodic', 'single-string'];
 const GENRES = ['Bluegrass', 'Old-Time'];
@@ -54,6 +55,7 @@ export default function SongsPage() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
   const [selectedStyle, setSelectedStyle] = useState<string | null>(null);
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
+  const [showImportModal, setShowImportModal] = useState(false);
 
   useEffect(() => {
     seedDatabase();
@@ -70,7 +72,6 @@ export default function SongsPage() {
   });
 
   // Demo: Load songs with explicit Beginner + Intermediate + Advanced arrangements
-  // This makes the level switcher visible immediately (the main new feature).
   async function loadProgressiveDemo() {
     await db.songs.clear();
 
@@ -208,7 +209,7 @@ export default function SongsPage() {
             level: 3,
             label: 'Advanced',
             description: 'Full rolls + syncopation from the original data',
-            tab: (songs?.find(s => s.id === 'cripple-creek')?.tab) || {
+            tab: {
               id: 'tab-cc-3',
               title: 'Cripple Creek - Advanced',
               tuning: ['G', 'D', 'G', 'B', 'D'],
@@ -223,45 +224,15 @@ export default function SongsPage() {
     ];
 
     await db.songs.bulkAdd(demoSongs);
-    // Force refresh of the live query
     window.location.reload();
   }
 
-  // Very basic client-side Grok URL import (uses the skeleton)
-  // For real generation, paste a YouTube/Spotify link and it will create a Beginner tab.
-  async function handleUrlImport() {
-    const url = prompt('Paste YouTube or Spotify link for a Beginner (Level 1) arrangement:');
-    if (!url) return;
-
+  async function handleSongCreated(newSong: Song) {
     try {
-      const { generateTabFromUrl } = await import('@/lib/ai/grokTabGenerator');
-      const result = await generateTabFromUrl({ url, targetLevel: 1 });
-
-      const newSong: Song = {
-        id: `imported-${Date.now()}`,
-        title: result.tab.title || 'Imported from URL',
-        artist: 'Generated via Grok',
-        genre: 'Bluegrass',
-        style: 'three-finger',
-        duration: 90,
-        difficulty: 2,
-        chordsUsed: result.suggestedChords || [],
-        tags: ['imported', 'grok'],
-        arrangements: [
-          {
-            id: `arr-import-${Date.now()}`,
-            level: 1,
-            label: 'Beginner',
-            description: result.notes || 'Generated from URL (Beginner level)',
-            tab: result.tab,
-          },
-        ],
-      };
-
       await db.songs.add(newSong);
-      alert(`Added "${newSong.title}" as Beginner level. Open it from the list to see the tab.`);
+      window.location.reload();
     } catch (e: any) {
-      alert('Import failed: ' + (e?.message || e));
+      alert('Failed to save imported song: ' + (e?.message || e));
     }
   }
 
@@ -338,11 +309,26 @@ export default function SongsPage() {
             ))}
           </div>
         </div>
-        {/* New demo actions for progressive levels + Grok import */}
+
+        {/* Action buttons for new features */}
         <div className="flex flex-wrap gap-2 mb-6">
-          <button type="button" onClick={loadProgressiveDemo} className="px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-600 text-white hover:bg-emerald-700 transition">Load Progressive Demo Songs</button>
-          <button type="button" onClick={handleUrlImport} className="px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-hover text-foreground border border-border hover:bg-border transition">Import from URL (Grok)</button>
-          <span className="text-xs text-muted self-center ml-2">Click "Load Progressive Demo Songs" to see the level switcher</span>
+          <button
+            type="button"
+            onClick={loadProgressiveDemo}
+            className="px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-600 text-white hover:bg-emerald-700 transition"
+          >
+            Load Progressive Demo Songs
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowImportModal(true)}
+            className="px-4 py-1.5 rounded-full text-sm font-semibold bg-surface-hover text-foreground border border-border hover:bg-border transition"
+          >
+            Import from URL (Grok)
+          </button>
+          <span className="text-xs text-muted self-center ml-2">
+            Click "Load Progressive Demo Songs" to see the level switcher
+          </span>
         </div>
 
         {/* Song List */}
@@ -393,6 +379,12 @@ export default function SongsPage() {
           </div>
         )}
       </div>
+
+      <ImportFromLinkModal
+        isOpen={showImportModal}
+        onClose={() => setShowImportModal(false)}
+        onSongCreated={handleSongCreated}
+      />
     </div>
   );
 }
