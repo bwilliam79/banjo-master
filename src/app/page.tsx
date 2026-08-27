@@ -55,9 +55,6 @@ export default function HomePage() {
   return (
     <div className="px-4 py-8 max-w-3xl mx-auto">
       <section className="mb-10">
-        <p className="font-hand text-xl text-primary mb-1">
-          Welcome back,
-        </p>
         <h1 className="font-serif text-4xl font-semibold text-foreground mb-2 tracking-tight">
           Pick up where you left off.
         </h1>
