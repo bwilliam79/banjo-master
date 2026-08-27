@@ -129,7 +129,7 @@ docker compose up -d
 This starts:
 - **banjo-master** — Next.js standalone server on port 3000 (internal only)
 - **cert-gen** — one-shot container that generates a self-signed TLS certificate
-- **caddy** — reverse proxy on ports 80/443 with HTTPS
+- **caddy** — reverse proxy published on host **8443** (container 443, self-signed). Not on host :443 (reserved for tehkernel-edge / UniFi WAN 443). LAN: `https://media-server:8443`
 
 Access the app at `https://<your-host>`. Accept the self-signed certificate warning in your browser.
 
