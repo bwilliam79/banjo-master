@@ -239,3 +239,15 @@ src/
 ## License
 
 MIT
+
+## PWA icons
+
+App icon is the locked banjo-head mark (`a-banjo-head`). Pack in `public/` (+ Next `src/app/icon.png` / `apple-icon.png`):
+
+- `favicon.ico` / `favicon-16.png` / `favicon-32.png`
+- `apple-touch-icon.png` (180)
+- `icon-192.png` / `icon-512.png` / `icon-maskable-512.png`
+- `manifest.json`
+
+Wired via `src/app/layout.tsx` metadata + `public/manifest.json`. Old `src/app/icon.svg` removed.
+
