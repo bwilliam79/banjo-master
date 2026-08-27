@@ -17,6 +17,7 @@ services:
       - "dashboard.description=5-String Banjo Tabs, Arrangements & Practice"
       - "dashboard.icon=music"
       - "dashboard.category=apps"
+      - "dashboard.url=https://media-server.williams.lan:8443"
 
   cert-gen:
     image: alpine:latest
