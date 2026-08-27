@@ -251,3 +251,6 @@ App icon is the locked banjo-head mark (`a-banjo-head`). Pack in `public/` (+ Ne
 
 Wired via `src/app/layout.tsx` metadata + `public/manifest.json`. Old `src/app/icon.svg` removed.
 
+## Phone navigation (More)
+
+Phone bottom nav ends with **More** (`/more`): **Tools** (metronome / tuner / camera) and **Settings**. Practice remains on Home quick actions and the desktop sidebar. Home no longer shows the orphan “Welcome back,” line.
